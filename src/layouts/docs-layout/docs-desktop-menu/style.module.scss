@@ -1,0 +1,97 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/variables/colors';
+
+.menu {
+    grid-area: _menu;
+    position: sticky;
+    top: var(--docs-header-height);
+    height: calc(100vh - var(--docs-header-height));
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    font-size: 0.9em;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
+
+.menu__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+}
+
+.menu__content footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0;
+    align-items: stretch;
+    padding: 1.5em 0;
+    width: 100%;
+}
+
+.menu__content footer a {
+    width: 100%;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+.account-content a {
+    text-decoration: none;
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.25em 0;
+    gap: 0.5em;
+}
+
+.menu-group__heading {
+    padding: 0 0.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list__item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list__item a {
+    display: flex;
+    padding: 0.5em;
+    border-radius: 0.25em;
+}
+
+.nav-list__item--current a {
+    background-color: colors.$grey-19;
+    color: inherit;
+
+    &:hover,
+    &:active {
+        background-color: colors.$grey-19;
+        text-decoration: none;
+    }
+}
+
+@include breakpoints.select('lg') {
+    .menu {
+        display: none;
+    }
+}

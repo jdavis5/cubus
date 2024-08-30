@@ -1,0 +1,29 @@
+@use 'src/common/styles/variables/colors';
+
+.status {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.status__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25em;
+    border-radius: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: normal;
+}
+
+.content > span {
+    padding: 0 0.5em;
+}
+
+.content > span:not(:first-child) {
+    border-left: solid 1px currentColor;
+}

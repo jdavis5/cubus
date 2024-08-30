@@ -1,0 +1,94 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/variables/colors';
+
+$-radius: 0.5em;
+
+.progress-bar {
+    border-radius: $-radius;
+    background-color: colors.$grey-18;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9rem;
+    margin: 1em 0;
+    counter-reset: item;
+}
+
+.progress-step {
+    flex-grow: 1;
+    flex-wrap: nowrap;
+    list-style-position: inside;
+    padding: 0.5em;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    line-height: 1.5rem;
+
+    &:first-child {
+        border-radius: $-radius 0 0 $-radius;
+    }
+
+    &:last-child {
+        border-radius: 0 $-radius $-radius 0;
+    }
+}
+
+.progress-step:not(.progress-step--complete) {
+    color: colors.$grey-8;
+    border-right: solid 1px colors.$grey-14;
+
+    &:last-child {
+        border-right-width: 0;
+    }
+}
+
+.progress-step--complete {
+    color: colors.$green-2;
+    background-color: colors.$green-18;
+    border-right: solid 1px colors.$green-16;
+}
+
+.progress-step--complete:not(.progress-step--current) {
+    &:after {
+        padding-left: 0.5em;
+        content: '✓';
+    }
+}
+
+.progress-step--current {
+    background-color: colors.$green-16;
+}
+
+@include breakpoints.select('sm') {
+    .progress-bar {
+        width: max-content;
+    }
+
+    .progress-step {
+        flex-grow: unset;
+
+        &::before {
+            content: counter(item) '';
+            counter-increment: item;
+        }
+    }
+
+    .progress-step {
+        padding: 0.5em 1em;
+        list-style-type: none;
+    }
+
+    .progress-step--current {
+        list-style-type: none;
+
+        &::before {
+            content: counter(item) '';
+            counter-increment: item;
+        }
+    }
+
+    .progress-step__title {
+        display: none;
+    }
+}

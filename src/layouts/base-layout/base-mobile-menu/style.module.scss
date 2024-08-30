@@ -1,0 +1,125 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/variables/colors';
+
+$transition-speed: 250;
+$-transition: transform #{$transition-speed}ms ease-in-out;
+
+.menu {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: colors.$white;
+    padding: 0;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.menu:global(.enter) {
+    transform: translateX(-100%);
+}
+
+.menu:global(.enter-done) {
+    transform: translateX(0);
+    transition: $-transition;
+}
+
+.menu:global(.exit) {
+    transform: translateX(-100%);
+    transition: $-transition;
+}
+
+.menu header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    border-bottom: solid 1px colors.$grey-16;
+}
+
+.menu header a {
+    width: 100%;
+}
+
+.menu__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+}
+
+.menu__content footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0;
+    align-items: stretch;
+    padding: 1.5em 0;
+    width: 100%;
+}
+
+.menu__content footer a {
+    width: 100%;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+.account-content a {
+    text-decoration: none;
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.25em 0;
+}
+
+.menu-group__heading {
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin: 0 0.5em;
+    padding: 0.5em;
+}
+
+.nav-list__item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list__item a {
+    display: flex;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+        text-decoration: underline;
+        color: colors.$blue-1;
+    }
+}
+
+@include breakpoints.select('sm') {
+    .menu {
+        width: 100vw;
+    }
+}
+
+:export {
+    transition-speed: $transition-speed;
+}

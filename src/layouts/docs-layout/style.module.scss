@@ -1,0 +1,27 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/variables/colors';
+
+.layout {
+    --docs-header-height: 60px;
+    background-color: colors.$white;
+    display: grid;
+    grid-template-areas:
+        '_header'
+        '_content-container'
+        '_footer';
+    grid-template-rows: var(--docs-header-height) auto;
+}
+
+.layout-content {
+    grid-area: _content-container;
+    display: grid;
+    grid-template-areas: '_menu _content';
+    grid-template-columns: 250px auto;
+}
+
+@include breakpoints.select('lg') {
+    .layout-content {
+        grid-template-areas: '_content';
+        grid-template-columns: auto;
+    }
+}

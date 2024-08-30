@@ -1,0 +1,14 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.field__header {
+    font-weight: bold;
+}
+
+.field__hint {
+    font-weight: normal;
+    font-size: 0.9em;
+}

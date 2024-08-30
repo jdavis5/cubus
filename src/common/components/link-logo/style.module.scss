@@ -1,0 +1,24 @@
+@use 'src/common/styles/mixins/animations';
+@use 'src/common/styles/variables/colors';
+
+.link-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.link-logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-logo a:hover svg {
+    $fill: colors.$purple-9;
+
+    fill: $fill;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: $fill;
+    -webkit-text-fill-color: $fill;
+    @include animations.shimmer();
+}

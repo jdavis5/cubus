@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "target": "es2018",
+        "baseUrl": ".",
+        "paths": {},
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "checkJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "moduleDetection": "force",
+        "importsNotUsedAsValues": "remove",
+        "noImplicitReturns": true,
+        "noImplicitOverride": true,
+        "noFallthroughCasesInSwitch": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "useUnknownInCatchVariables": true,
+        "exactOptionalPropertyTypes": false,
+        "noErrorTruncation": true,
+        "strictNullChecks": true
+    },
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        "**/*.jsx",
+        // "env",
+        "prisma/clients.d.ts"
+    ],
+    "exclude": ["node_modules", "prisma/*/.generated"]
+}

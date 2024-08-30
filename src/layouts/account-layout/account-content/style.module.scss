@@ -1,0 +1,9 @@
+.content {
+    grid-area: _content;
+    isolation: isolate;
+    position: relative;
+}
+
+.content main {
+    padding: 1em;
+}

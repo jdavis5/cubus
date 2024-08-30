@@ -1,0 +1,78 @@
+@use 'src/common/styles/variables/colors';
+
+$-transition-speed: 250;
+$-transition: max-height #{$-transition-speed}ms ease-in-out;
+
+.menu {
+    overflow: clip;
+    background-color: colors.$grey-2;
+    flex-grow: 1;
+    color: colors.$grey-14;
+    border-top: solid 1px colors.$grey-6;
+    max-height: 0;
+    transition: $-transition;
+}
+
+.menu:global(.enter) {
+    max-height: 0;
+}
+
+.menu:global(.enter-done) {
+    max-height: calc(50vh - 0.5em);
+}
+
+.nav {
+    font-size: 0.9rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-list__item {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list__item a {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    text-decoration: none;
+    color: colors.$grey-14;
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+        color: colors.$white;
+    }
+}
+
+.nav-list__item--active a {
+    color: colors.$white;
+    text-decoration-line: underline;
+
+    &:hover,
+    &:active {
+        color: colors.$white;
+        text-decoration-line: underline;
+    }
+}
+
+:export {
+    transition-speed: $-transition-speed;
+}

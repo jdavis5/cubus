@@ -1,0 +1,13 @@
+@use 'src/common/styles/variables/colors';
+
+.result {
+    display: flex;
+    flex-direction: column;
+}
+
+.interaction {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    justify-content: flex-end;
+}

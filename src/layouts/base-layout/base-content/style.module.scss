@@ -1,0 +1,14 @@
+@use 'src/common/styles/variables/colors';
+
+.content {
+    position: relative;
+    grid-area: _content;
+    margin: 0;
+    word-break: break-word;
+    background-color: colors.$white;
+}
+
+.content main {
+    min-height: calc(100vh - var(--base-header-height));
+    padding: 2em 1em;
+}

@@ -1,0 +1,22 @@
+@use 'src/common/styles/variables/colors';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 0;
+    gap: 1em;
+    width: 100%;
+    border-radius: 0.25em;
+    background-color: transparent;
+    padding: 0;
+    color: colors.$black;
+}
+
+.form label {
+    flex-grow: 1;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.25em;
+}

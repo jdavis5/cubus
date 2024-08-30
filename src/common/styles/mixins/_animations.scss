@@ -1,0 +1,38 @@
+@mixin scale($from, $to, $speed: 200ms) {
+    @keyframes scale {
+        from {
+            transform: scale($from);
+        }
+        to {
+            transform: scale($to);
+        }
+    }
+    animation: scale $speed ease-out;
+}
+
+@mixin shimmer($speed: 6000ms) {
+    @keyframes shimmer {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        50% {
+            filter: hue-rotate(-90deg);
+        }
+        100% {
+            filter: hue-rotate(0deg);
+        }
+    }
+    animation: shimmer $speed reverse infinite ease-in;
+}
+
+@mixin spin($speed: 750ms) {
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(365deg);
+        }
+    }
+    animation: spin $speed linear infinite;
+}

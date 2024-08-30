@@ -1,0 +1,36 @@
+@use 'src/common/styles/variables/colors';
+@use 'src/common/styles/mixins/highlight';
+
+.form-error {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    display: flex;
+    flex-direction: row;
+    color: colors.$black;
+    margin: 0;
+    border-radius: 0.25em;
+    overflow: hidden;
+}
+
+.error__icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--error-secondary-color);
+    color: currentColor;
+    padding: 0.5em;
+    font-size: 1.5rem;
+}
+
+.error__message {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: var(--error-secondary-color);
+    padding: 0.5em;
+    align-items: center;
+    font-weight: bold;
+}

@@ -1,0 +1,17 @@
+@use 'src/common/styles/variables/colors';
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.heading:hover a {
+    color: colors.$blue-1;
+}
+
+.heading a {
+    color: transparent;
+    font-weight: 800;
+    font-size: 0.9em;
+}

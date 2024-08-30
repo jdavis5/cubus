@@ -1,0 +1,102 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/variables/colors';
+
+.comparison-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+    border: solid 1px colors.$grey-14;
+    border-radius: 0.25em;
+}
+
+.comparison {
+    display: grid;
+    grid-template-columns:
+        [row-start title-start]
+        1fr
+        [title-end current-start]
+        2fr
+        [current-end selected-start]
+        2fr
+        [selected-end row-end];
+    gap: 1px;
+    width: 100%;
+}
+
+.comparison thead,
+.comparison tbody,
+.comparison tfoot {
+    display: contents;
+}
+
+.comparison tr {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: row;
+}
+
+.comparison td,
+.comparison th {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    gap: 0.5em;
+}
+
+.comparison tbody td {
+    &:nth-child(1 of td) {
+        background-color: colors.$grey-18;
+    }
+
+    &:nth-child(2 of td) {
+        background-color: colors.$green-18;
+    }
+}
+
+.comparison tbody tr:first-of-type td {
+    font-weight: bold;
+
+    &:nth-child(1 of td) {
+        background-color: colors.$grey-16;
+    }
+
+    &:nth-child(2 of td) {
+        background-color: colors.$green-16;
+    }
+}
+
+.comparison th[scope='row'] {
+    font-weight: bold;
+    justify-content: end;
+}
+
+.warn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@include breakpoints.select('sm') {
+    .comparison {
+        grid-template-columns:
+            [row-start current-start]
+            1fr
+            [current-end selected-start]
+            1fr
+            [selected-end row-end];
+    }
+
+    .comparison th[scope='row'] {
+        grid-column: row;
+        justify-content: center;
+        font-weight: bold;
+        padding: 0.5em 0 0.25em 0;
+    }
+
+    .comparison thead th[scope='row'] {
+        display: none;
+    }
+}

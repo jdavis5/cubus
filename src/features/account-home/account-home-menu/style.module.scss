@@ -1,0 +1,94 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/mixins/highlight';
+@use 'src/common/styles/variables/colors';
+
+$-border-radius: 0.5em;
+$-transition-speed: 200ms;
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.menu > a {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-item-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: $-border-radius;
+    transition: box-shadow $-transition-speed ease-in;
+}
+
+.menu > a:hover .menu-item-container {
+    box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.5);
+}
+
+.menu-item {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 2em;
+    border: solid 1px colors.$grey-14;
+    border-bottom-width: 0;
+    border-radius: $-border-radius $-border-radius 0 0;
+    transition: background-color $-transition-speed ease-in;
+}
+
+.menu-item__value {
+    display: inline-block;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: bold;
+    transition: color $-transition-speed ease-in;
+}
+
+.menu > a:hover .menu-item__value {
+    color: colors.$blue-1;
+}
+
+.menu-item__description {
+    color: colors.$black;
+    transition: color $-transition-speed ease-in;
+}
+
+.menu-item-edge {
+    position: relative;
+    z-index: 2;
+    @include highlight.bg('hl3');
+    border-radius: 0 0 $-border-radius $-border-radius;
+    height: 0.5em;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        @include highlight.bg('hl2');
+        border-radius: 0 0 $-border-radius $-border-radius;
+        transition: opacity $-transition-speed ease-in;
+        opacity: 0;
+    }
+}
+
+.menu > a:hover .menu-item-edge {
+    &::before {
+        opacity: 1;
+    }
+}
+
+@include breakpoints.select('md') {
+    .menu {
+        grid-template-columns: auto;
+    }
+}

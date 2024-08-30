@@ -1,0 +1,464 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Cubus API v1",
+        "description": "Cubus API",
+        "termsOfService": "/terms",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/api/v1"
+        }
+    ],
+    "tags": [
+        {
+            "name": "movies",
+            "description": "Operations for the movie dataset"
+        },
+        {
+            "name": "theaters",
+            "description": "Operations for the theater dataset"
+        }
+    ],
+    "components": {
+        "examples": {},
+        "schemas": {
+            "Movie": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "example": "abcd1e23f4abcd1e23f4a5cd"
+                    },
+                    "fullplot": {
+                        "type": "string",
+                        "example": "A young boy from a desert planet must join forces with a mysterious space warrior as his mentor in order to rescue Princess Lila from the ruthless Dark Father and destroy the Death Moon built by the Empire with the power to destroy the entire galaxy."
+                    },
+                    "imdb": {
+                        "type": "object",
+                        "properties": {
+                            "rating": {
+                                "type": "number",
+                                "example": 8.1
+                            },
+                            "votes": {
+                                "type": "integer",
+                                "example": 676934
+                            },
+                            "id": {
+                                "type": "integer",
+                                "example": 76759
+                            }
+                        }
+                    },
+                    "year": {
+                        "type": "integer",
+                        "example": 1977
+                    },
+                    "plot": {
+                        "type": "string",
+                        "example": "Luke Cloudwalker joins forces with a space warrior, a pilot, a kiewoo and two droids to save the universe from the Empire's world-destroying battle-station, while also attempting to rescue Princess Lila from the evil Dark Father."
+                    },
+                    "genres": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": ["Action", "Adventure", "Fantasy"]
+                    },
+                    "rated": {
+                        "type": "string",
+                        "example": "PG"
+                    },
+                    "title": {
+                        "type": "string",
+                        "example": "Space Wars: Episode IV"
+                    },
+                    "lastupdated": {
+                        "type": "string",
+                        "example": "2018-10-03 00:10:59.212000000"
+                    },
+                    "languages": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": ["English"]
+                    },
+                    "writers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": ["George Cushing"]
+                    },
+                    "type": {
+                        "type": "string",
+                        "example": "movie"
+                    },
+                    "tomatoes": {
+                        "type": "object",
+                        "properties": {
+                            "website": {
+                                "type": "string",
+                                "example": "http://www.example-spacewars.com/episode-iv/"
+                            },
+                            "viewer": {
+                                "type": "object",
+                                "properties": {
+                                    "rating": {
+                                        "type": "number",
+                                        "example": 4.0
+                                    },
+                                    "numReviews": {
+                                        "type": "integer",
+                                        "example": 818140
+                                    },
+                                    "meter": {
+                                        "type": "integer",
+                                        "example": 90
+                                    }
+                                }
+                            },
+                            "dvd": {
+                                "type": "string",
+                                "format": "date",
+                                "example": 1095724800000
+                            },
+                            "critic": {
+                                "type": "object",
+                                "properties": {
+                                    "rating": {
+                                        "type": "number",
+                                        "example": 8.0
+                                    },
+                                    "numReviews": {
+                                        "type": "integer",
+                                        "example": 59
+                                    },
+                                    "meter": {
+                                        "type": "integer",
+                                        "example": 88
+                                    }
+                                }
+                            },
+                            "lastUpdated": {
+                                "type": "string",
+                                "format": "date",
+                                "example": 1442077443000
+                            },
+                            "consensus": {
+                                "type": "string",
+                                "example": "A legendarily expansive and ambitious start to the sci-fi saga, George Ford opened our eyes to the possiblites of blockbuster filmmaking and things have never been the same."
+                            },
+                            "rotten": {
+                                "type": "integer",
+                                "example": 15
+                            },
+                            "production": {
+                                "type": "string",
+                                "example": "20th Century Fox"
+                            },
+                            "fresh": {
+                                "type": "integer",
+                                "example": 71
+                            }
+                        }
+                    },
+                    "poster": {
+                        "type": "string",
+                        "example": "https://m.media.example-foo.com/images/posters/space-wars-iv.jpg"
+                    },
+                    "num_mflix_comments": {
+                        "type": "integer",
+                        "example": "171,"
+                    },
+                    "released": {
+                        "type": "string",
+                        "format": "date",
+                        "example": 233366400000
+                    },
+                    "awards": {
+                        "type": "object",
+                        "properties": {
+                            "nominations": {
+                                "type": "integer",
+                                "example": 20
+                            },
+                            "text": {
+                                "type": "string",
+                                "example": "Won 2 Oscars. Another 31 wins & 20 nominations."
+                            },
+                            "wins": {
+                                "type": "integer",
+                                "example": 33
+                            }
+                        }
+                    },
+                    "countries": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": ["USA"]
+                    },
+                    "cast": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": [
+                            "Mark Ford",
+                            "Harrison Fisher",
+                            "Carrie Lucas",
+                            "Peter Hamill"
+                        ]
+                    },
+                    "directors": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": ["George Cushing"]
+                    },
+                    "runtime": {
+                        "type": "integer",
+                        "example": 143
+                    }
+                }
+            },
+            "Theater": {
+                "type": "object",
+                "properties": {
+                    "theaterId": {
+                        "type": "integer",
+                        "example": 123
+                    },
+                    "location": {
+                        "type": "object",
+                        "properties": {
+                            "address": {
+                                "type": "object",
+                                "properties": {
+                                    "street1": {
+                                        "type": "string",
+                                        "example": "128 E Interstate 12"
+                                    },
+                                    "street2": {
+                                        "type": "string",
+                                        "example": "Ste 130"
+                                    },
+                                    "city": {
+                                        "type": "string",
+                                        "example": "Weatherton"
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "example": "TX"
+                                    },
+                                    "zipcode": {
+                                        "type": "string",
+                                        "example": "12087"
+                                    }
+                                }
+                            },
+                            "geo": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "Point"
+                                    },
+                                    "coordinates": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number"
+                                        },
+                                        "example": [-61.2191185, 79.612171]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "x-schemas": {
+            "Pagination": {
+                "type": "object",
+                "properties": {
+                    "totalCount": {
+                        "description": "The total amount of matching records",
+                        "type": "integer",
+                        "example": 200
+                    },
+                    "page": {
+                        "description": "The current page of results",
+                        "type": "integer",
+                        "example": 5
+                    },
+                    "firstPage": {
+                        "description": "The first page of results",
+                        "type": "string",
+                        "example": "/api/resource/1234"
+                    },
+                    "previousPage": {
+                        "description": "The previous page of results",
+                        "type": "string",
+                        "example": "/api/resource/1234?page=4"
+                    },
+                    "nextPage": {
+                        "description": "The next page of results",
+                        "type": "string",
+                        "example": "/api/resource/1234?page=6"
+                    },
+                    "lastPage": {
+                        "description": "The last page of results",
+                        "type": "string",
+                        "example": "/api/resource/1234?page=8"
+                    },
+                    "items": {
+                        "description": "The results",
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "ProblemDetail": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "A URL with documentation about the specific error encountered",
+                        "example": "docs/api/error-reference#example-error-code"
+                    },
+                    "status": {
+                        "type": "number",
+                        "description": "The HTTP status code generated by the origin server for this occurrence of the problem",
+                        "example": 418
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "A short summary of the problem",
+                        "example": "An example error"
+                    },
+                    "detail": {
+                        "type": "string",
+                        "description": "An explanation specific to this occurrence of the problem",
+                        "example": "An example error has occurred. Please try again."
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200Movie": {
+                "description": "Successful operation",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Movie"
+                        }
+                    }
+                }
+            },
+            "200Movies": {
+                "description": "Successful operation",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/x-schemas/Pagination"
+                                },
+                                {
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Movie"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "200Theater": {
+                "description": "Successful operation",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Theater"
+                        }
+                    }
+                }
+            },
+            "200Theaters": {
+                "description": "Successful operation",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/x-schemas/Pagination"
+                                },
+                                {
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Theater"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "401Unauthorized": {
+                "description": "Unauthorized",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/x-schemas/ProblemDetail"
+                        }
+                    }
+                }
+            },
+            "404NotFound": {
+                "description": "Not found",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/x-schemas/ProblemDetail"
+                        }
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyAuth": {
+                "type": "http",
+                "description": "A key that allows access to the API",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyAuth": []
+        }
+    ],
+    "paths": {}
+}

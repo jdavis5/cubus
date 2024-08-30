@@ -1,0 +1,13 @@
+@use 'src/common/styles/variables/colors';
+
+.layout {
+    --base-header-height: 60px;
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        '_header'
+        '_content'
+        '_footer';
+    grid-template-rows: var(--base-header-height) auto min-content;
+    background-color: colors.$white;
+}

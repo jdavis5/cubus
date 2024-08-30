@@ -1,0 +1,40 @@
+@use 'src/common/styles/variables/colors';
+
+.status {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: fit-content;
+    font-size: inherit;
+    padding: 0;
+    gap: 0.5em;
+}
+
+.status__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+.status--error .status__icon {
+    color: colors.$pink-1;
+}
+
+.status--success .status__icon {
+    color: colors.$green-5;
+}
+
+.status--warn .status__icon {
+    color: colors.$orange-1;
+}
+
+.status__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    gap: 0.5em;
+}

@@ -1,0 +1,29 @@
+@use 'src/common/styles/variables/colors';
+
+.warn {
+    $-background-color: var(--error-secondary-color);
+    $-arrow-size: 8px;
+
+    color: colors.$black;
+    font-size: 0.9rem;
+    background-color: $-background-color;
+    position: relative;
+    margin-top: $-arrow-size;
+    padding: 0.75em 1em;
+    border-radius: 0.25em;
+    width: fit-content;
+    font-weight: bold;
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-bottom: $-arrow-size solid $-background-color;
+        border-left: $-arrow-size solid transparent;
+        border-right: $-arrow-size solid transparent;
+        display: block;
+        width: 0;
+        height: $-arrow-size;
+        left: 1em;
+        top: calc(($-arrow-size * -1) * 2);
+    }
+}
