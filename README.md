@@ -1,7 +1,5 @@
 # Cubus
 
-## Contents
-
 - [Introduction](#introduction)
 - [Features](#features)
 - [Potential improvements](#app-features)
