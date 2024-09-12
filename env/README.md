@@ -32,7 +32,7 @@ Related:
 
 ### Bundler limitations
 
-To ensure that properties found in `process.env` can be properly inlined by the bundler, they must be referenced directly. Dynamically referencing a property will not work as expected.
+To ensure that properties found in `process.env` can be properly inlined by the bundler they must be referenced directly. Dynamically referencing a property will not work as expected.
 
 ```js
 // Bad
