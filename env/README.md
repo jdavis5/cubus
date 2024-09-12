@@ -1,14 +1,10 @@
 # Environment variable schema validation
 
-## Contents
-
 - [Introduction](#introduction)
 - [Build time validation](#build-time-validation)
 - [Multiple environments](#multiple-environments)
 - [Defining the environments](#defining-the-environments)
 - [Using the environments](#using-the-environments)
-
----
 
 ## Introduction
 
