@@ -8,6 +8,7 @@
 - [Known issues](#known-issues)
 - [Dependencies overview](#dependencies-overview)
 - [Environment variables](#environment-variables)
+- [Getting started](#getting-started)
 - [Setup overview](#setup-overview)
 
 ## Introduction
@@ -211,6 +212,34 @@ For detailed information regarding how the environment variables are validated s
 
 For an example implementation of environment variables see:  
 [.env.example](./.env.example)
+
+## Getting started
+
+### 1. Install the dependencies
+
+```sh
+pnpm install
+```
+
+### 2. Set up the project
+
+All setup scripts will be executed by running the following convenience script:
+
+```sh
+pnpm run setup
+```
+
+### 3. Build the project
+
+```sh
+pnpm run build
+```
+
+### 4. Start the project
+
+```sh
+pnpm run start
+```
 
 ## Setup overview
 
