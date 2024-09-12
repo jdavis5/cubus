@@ -16,9 +16,9 @@ Cubus is an account management system with tiered subscriptions that uses API ke
 
 The project is a full stack and responsive web application built using the [Next.js](https://nextjs.org/) React framework, and is strongly typed throughout using [TypeScript](https://www.typescriptlang.org/). It utilises [tRPC](https://trpc.io/) for end-to-end type safety, and [Zod](https://zod.dev/) for input validation, including the validation of environment variables [at build time](#build-time-validation). [Prisma ORM](https://www.prisma.io/orm) is leveraged to provide type-safe database interactions with [MongoDB](https://www.mongodb.com/).
 
-The public API is designed with RESTful architecture and is documented according to [OpenAPI OAS3](https://swagger.io/specification/v3/) specification. Its error handling employs [RFC 9457 - Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457).
+The public API implements RESTful architecture and is documented according to [OpenAPI OAS3](https://swagger.io/specification/v3/) specification. Its error handling employs [RFC 9457 - Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457).
 
-In order to demonstrate more underlying code the project purposely does not rely on any out-of-the-box authentication solution. It also does not utilise any external UI library and instead uses CSS modules with a range of Sass utilities for customised styling and composition.
+In order to demonstrate more underlying code the project purposely does not rely on an out-of-the-box authentication solution. It also does not utilise any external UI library and instead uses CSS modules with a range of Sass utilities for customised styling and composition.
 
 ## Features
 
