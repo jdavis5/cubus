@@ -41,7 +41,7 @@ In order to demonstrate more underlying code the project purposely does not rely
 - Session based authentication
 - CSRF protection using the double-submit cookie pattern
 - Environment variable validation using Zod schemas, including [build time validation](#build-time-validation)
-- Multiple Prisma clients utilising custom extensions
+- Multiple Prisma clients utilising [custom extensions](https://www.prisma.io/docs/orm/prisma-client/client-extensions)
 - Zod schemas [generated](https://www.prisma.io/docs/orm/prisma-schema/overview/generators) from a Prisma schema utilising rich comments for detailed customisation of schemas
 - A type-safe end-to-end internal API combining tRPC with Zod
 - A RESTful public API utilising Next.js API route handlers
