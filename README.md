@@ -11,7 +11,7 @@
 
 ## Introduction
 
-Cubus is an account management system featuring multiple subscription tiers that permits interactions with documented API endpoints via API keys.
+Cubus is an account management system with multiple subscription tiers that permits interactions with documented API endpoints through the use of API keys.
 
 The project is a full stack and responsive web application built using the [Next.js](https://nextjs.org/) React framework and [Node.js](https://nodejs.org/). It is strongly typed throughout using [TypeScript](https://www.typescriptlang.org/), also utilising [tRPC](https://trpc.io/) for end-to-end type safety, and [Zod](https://zod.dev/) for input validation, including the validation of environment variables [at build time](#build-time-validation). [Prisma ORM](https://www.prisma.io/orm) is leveraged to provide type-safe database interactions with [MongoDB](https://www.mongodb.com/).
 
