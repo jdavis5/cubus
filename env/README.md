@@ -12,7 +12,7 @@ This project requires that environment variables are validated against a [Zod](h
 
 The approach has taken advantage of JSDoc comments for type safety within JavaScript, and to enforce certain additional rules at compile time.
 
-Imported variables into a desired context will benefit from autocompletion.
+Validated environment variables will also benefit from autocompletion when imported into the desired context.
 
 ## Build time validation
 
