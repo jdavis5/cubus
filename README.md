@@ -32,7 +32,7 @@ In order to demonstrate more underlying code the project purposely does not rely
 - 2FA primary email modification (with verification email)
 - Tiered subscription comparison and management
 - API key generation and management
-- An interactive public API requiring key authentication
+- An interactive public API requiring API key authentication
 - Documentation pages for the public API
 - Multiple responsive layouts
 
