@@ -42,7 +42,7 @@ In order to demonstrate more underlying code the project purposely does not rely
 - CSRF protection using the double-submit cookie pattern
 - Environment variable validation using Zod schemas, including [build time validation](#build-time-validation)
 - Multiple Prisma clients utilising [custom extensions](https://www.prisma.io/docs/orm/prisma-client/client-extensions)
-- Zod schemas [generated](https://www.prisma.io/docs/orm/prisma-schema/overview/generators) from a Prisma schema utilising rich comments for detailed customisation of schemas
+- Zod schemas [generated from Prisma models](https://www.prisma.io/docs/orm/prisma-schema/overview/generators) optionally enhanced by [rich comments](https://www.prisma.io/docs/orm/prisma-schema/overview#comments)
 - A type-safe end-to-end internal API combining tRPC with Zod
 - A RESTful public API utilising Next.js API route handlers
 - [OpenAPI OAS3](https://swagger.io/specification/v3/) specification that is generated for the versioned public API
