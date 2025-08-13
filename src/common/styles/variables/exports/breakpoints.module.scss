@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use 'src/common/styles/variables/breakpoints' as bp;
+
+:export {
+    xs: map.get(bp.$breakpoints, 'xs');
+    xm: map.get(bp.$breakpoints, 'sm');
+    md: map.get(bp.$breakpoints, 'md');
+    lg: map.get(bp.$breakpoints, 'lg');
+    xl: map.get(bp.$breakpoints, 'xl');
+    xxl: map.get(bp.$breakpoints, 'xxl');
+}

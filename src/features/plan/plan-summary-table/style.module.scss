@@ -1,0 +1,58 @@
+@use 'src/common/styles/variables/colors';
+
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+    border: solid 1px colors.$grey-14;
+    border-radius: 0.25em;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns:
+        [row-start title-start]
+        1fr
+        [title-end current-start]
+        2fr
+        [current-end row-end];
+    gap: 1px;
+    width: 100%;
+}
+
+.summary thead,
+.summary tbody,
+.summary tfoot {
+    display: contents;
+}
+
+.summary tr {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: row;
+}
+
+.summary td,
+.summary th {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    gap: 0.5em;
+}
+
+.summary thead td {
+    background-color: colors.$grey-16;
+    font-weight: bold;
+}
+
+.summary tbody td {
+    background-color: colors.$grey-18;
+}
+
+.summary th[scope='row'] {
+    font-weight: bold;
+    justify-content: start;
+}

@@ -1,0 +1,16 @@
+{
+    "extends": ["next/core-web-vitals", "prettier"],
+    "rules": {
+        "no-duplicate-imports": "error",
+        "no-unused-vars": ["error", { "args": "none" }]
+    },
+    "overrides": [
+        {
+            "files": ["*.d.ts"],
+            "rules": {
+                "no-unused-vars": "off"
+            }
+        }
+    ],
+    "ignorePatterns": ["prisma/**/.generated"]
+}

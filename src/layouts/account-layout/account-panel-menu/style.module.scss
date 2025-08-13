@@ -1,0 +1,65 @@
+@use 'src/common/styles/variables/colors';
+
+$-transition: all 200ms ease-in-out;
+
+.nav {
+    position: relative;
+    top: 0.25em;
+    background-color: colors.$grey-2;
+    box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.5);
+    display: flex;
+    padding: 0.5em 0;
+    border-radius: 0.25em;
+    border: solid 1px colors.$grey-4;
+    font-size: 0.9rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    color: colors.$grey-14;
+}
+
+.nav-list__item > a,
+.nav-list__item > button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5em 2em;
+    border-collapse: collapse;
+    border: solid 0.25em transparent;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    width: 200px;
+}
+
+.nav-list__item > a {
+    text-decoration: none;
+    transition: $-transition;
+    color: inherit;
+
+    &:hover {
+        color: colors.$white;
+    }
+}
+
+.nav-list__item > button {
+    border-radius: 0;
+    background-color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    transition: $-transition;
+
+    &:hover,
+    &:active {
+        background-color: inherit;
+        color: colors.$white;
+    }
+
+    &:disabled,
+    &:disabled:hover {
+        background-color: inherit;
+        color: colors.$grey-10;
+    }
+}

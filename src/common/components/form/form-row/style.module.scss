@@ -1,0 +1,8 @@
+.form-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: flex-start;
+    justify-content: flex-start;
+}

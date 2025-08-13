@@ -1,0 +1,15 @@
+@use 'src/common/styles/variables/colors';
+@use 'src/common/styles/variables/fonts';
+
+.code {
+    font-family: fonts.$monospace;
+    display: inline-flex;
+    background-color: colors.$grey-19;
+    font-size: 0.9em;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+}
+
+.code--inline {
+    display: inline-flex;
+}

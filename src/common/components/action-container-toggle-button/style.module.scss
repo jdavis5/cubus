@@ -1,0 +1,43 @@
+@use 'src/common/styles/variables/colors';
+
+.button {
+    cursor: pointer;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 0;
+    width: fit-content;
+    font-weight: bold;
+    white-space: nowrap;
+    border-radius: 0.25em;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    letter-spacing: 0.05ch;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+    background-color: transparent;
+    border: solid 1px colors.$black;
+    color: colors.$black;
+    font-size: 0.9rem;
+    text-wrap: wrap;
+
+    &:hover,
+    &:active {
+        background-color: colors.$black;
+        color: colors.$white;
+    }
+
+    &:disabled,
+    &:disabled:hover {
+        cursor: not-allowed;
+        background-color: colors.$grey-14;
+        color: colors.$grey-6;
+    }
+}
+
+.button--active {
+    background-color: colors.$black;
+    color: colors.$white;
+}

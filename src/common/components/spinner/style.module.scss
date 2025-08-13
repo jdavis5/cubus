@@ -1,0 +1,26 @@
+@use 'src/common/styles/mixins/animations';
+
+.spinner {
+    display: inline-flex;
+    font-size: 1.2em;
+    margin: 0 0.5em;
+}
+
+.spinner--left {
+    margin-left: 0;
+}
+
+.spinner--right {
+    margin-right: 0;
+}
+
+.spinner__icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner__icon svg {
+    @include animations.spin();
+}

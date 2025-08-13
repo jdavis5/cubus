@@ -1,0 +1,30 @@
+@use 'sass:map';
+@use 'src/common/styles/variables/colors';
+
+$-themes: (
+    'hl1': linear-gradient(135deg, colors.$orange-1 25%, colors.$pink-1),
+    'hl2': linear-gradient(135deg, colors.$pink-1 25%, colors.$blue-10),
+    'hl3': linear-gradient(135deg, colors.$pink-5, colors.$blue-10)
+);
+
+@mixin text($theme: 'hl1') {
+    @if map-has-key($-themes, $theme) {
+        background: map.get($-themes, $theme);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+    } @else {
+        @warn 'Unknown highlight theme';
+    }
+}
+
+@mixin bg($theme: 'hl1') {
+    @if map-has-key($-themes, $theme) {
+        background: map.get($-themes, $theme);
+        color: colors.$black;
+    } @else {
+        @warn 'Unknown highlight theme';
+    }
+}

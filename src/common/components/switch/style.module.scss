@@ -1,0 +1,36 @@
+@use 'src/common/styles/variables/colors';
+
+.switch {
+    @mixin bg($fill: colors.$grey-20) {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 8 8"%3E%3Ccircle r="3" fill="#{$fill}" /%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: 0;
+        transition: background-position 0.1s ease-in-out;
+    }
+
+    cursor: pointer;
+    appearance: none;
+    width: 2.5em;
+    height: 1.5em;
+    background-color: colors.$pink-6;
+    border-radius: 1.25em;
+    @include bg();
+
+    &:checked {
+        background-color: colors.$green-8;
+        @include bg();
+        background-position: 100%;
+    }
+
+    &:disabled {
+        background-color: colors.$grey-12;
+        @include bg(colors.$grey-16);
+        cursor: not-allowed;
+    }
+
+    &:focus-visible {
+        outline-style: solid;
+        outline-width: 0.2em;
+        outline-color: invert;
+    }
+}

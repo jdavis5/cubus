@@ -1,0 +1,76 @@
+@use 'src/common/styles/mixins/animations';
+
+$transition-speed: 200;
+$-transition: all #{$transition-speed}ms ease-in-out;
+
+.panel {
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    color: inherit;
+}
+
+.panel-toggle {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0.25em;
+    gap: 0.5em;
+    transition: $-transition;
+}
+
+.panel-toggle__icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    transition: $-transition;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.panel-toggle__text {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.panel-drawer {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    background-color: transparent;
+    opacity: 0;
+}
+
+.panel-drawer--right {
+    right: 0;
+}
+
+.panel-drawer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel:global(.enter-done) .panel-toggle__icon {
+    opacity: 1;
+}
+
+.panel:global(.enter-done) .panel-drawer {
+    opacity: 1;
+    transition: opacity 200ms ease-out;
+}
+
+.panel:global(.exit) .panel-drawer {
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+}
+
+:export {
+    transition-speed: $transition-speed;
+}

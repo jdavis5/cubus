@@ -1,0 +1,15 @@
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@scarf/scarf'
+  - '@tree-sitter-grammars/tree-sitter-yaml'
+  - core-js-pure
+  - esbuild
+  - prisma
+  - tree-sitter
+  - tree-sitter-json
+  - unrs-resolver
+
+onlyBuiltDependencies:
+  - bcrypt

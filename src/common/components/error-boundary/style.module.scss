@@ -1,0 +1,18 @@
+@use 'src/common/styles/variables/colors';
+@use 'src/common/styles/variables/fonts';
+
+.boundary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.boundary__message {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    border-radius: 0.25em;
+    background-color: colors.$grey-16;
+    color: colors.$black;
+    font-family: fonts.$monospace;
+}

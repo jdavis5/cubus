@@ -1,0 +1,21 @@
+@use 'src/common/styles/variables/colors';
+
+.error-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: solid 1px colors.$grey-16;
+    border-radius: 0.25em;
+    padding: 2em;
+    max-width: 800px;
+}
+
+.error-item dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+
+.error-item dt {
+    font-weight: bold;
+}

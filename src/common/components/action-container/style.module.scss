@@ -1,0 +1,73 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/variables/colors';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    border: solid 1px transparent;
+    gap: 1px;
+    border-radius: 0.25em;
+}
+
+.container__content {
+    flex-grow: 1;
+    width: min-content;
+    background-color: colors.$grey-18;
+    border-radius: 0.25em 0 0 0.25em;
+}
+
+.container__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: colors.$grey-18;
+    border-radius: 0 0.25em 0.25em 0;
+    padding: 1em;
+    width: 9em;
+    gap: 0.5em 1em;
+}
+
+.container__actions button {
+    width: 100%;
+}
+
+.container--error {
+    border: solid 1px var(--error-secondary-color);
+}
+
+.container--error .container__content,
+.container--error .container__actions {
+    background-color: var(--error-primary-color);
+}
+
+@include breakpoints.select('sm') {
+    .container {
+        flex-direction: column-reverse;
+        gap: 1px;
+    }
+
+    .container__content {
+        width: auto;
+        border-radius: 0 0 0.25em 0.25em;
+    }
+
+    .container__actions {
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        border: none;
+        border-color: inherit;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        padding: 0.5em;
+        border-radius: 0.25em 0.25em 0 0;
+    }
+
+    .container__actions button {
+        width: auto;
+    }
+}

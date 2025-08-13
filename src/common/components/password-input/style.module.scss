@@ -1,0 +1,32 @@
+@use 'src/common/styles/variables/colors';
+
+.input {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.input--disabled {
+    background-color: colors.$grey-16;
+}
+
+.extras {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+    margin: 0 0.75em;
+}
+
+.extras__icon {
+    cursor: pointer;
+    color: colors.$black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input--disabled .extras__icon {
+    cursor: not-allowed;
+    color: colors.$grey-4;
+}

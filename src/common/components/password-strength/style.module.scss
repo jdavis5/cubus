@@ -1,0 +1,45 @@
+@use 'src/common/styles/variables/colors';
+
+.password-strength {
+    display: flex;
+    flex-direction: column;
+}
+
+.strength-rating {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 0 0.25em 0;
+    gap: 0.25em;
+
+    &[data-strength='1'],
+    &[data-strength='2'],
+    &[data-strength='3'],
+    &[data-strength='4'] {
+        cursor: help;
+    }
+}
+
+.strength-block {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: colors.$grey-14;
+    height: 0.25em;
+    transition: background-color 0.25s ease-in;
+    border-radius: 0.25em;
+}
+
+.strength-rating[data-strength='1'] .strength-block:nth-of-type(1) {
+    background-color: colors.$red-5;
+}
+
+.strength-rating[data-strength='2'] .strength-block:nth-of-type(-n + 2) {
+    background-color: colors.$orange-1;
+}
+
+.strength-rating[data-strength='3'] .strength-block:nth-of-type(-n + 3) {
+    background-color: colors.$green-7;
+}
+
+.strength-rating[data-strength='4'] .strength-block:nth-of-type(-n + 4) {
+    background-color: colors.$green-7;
+}

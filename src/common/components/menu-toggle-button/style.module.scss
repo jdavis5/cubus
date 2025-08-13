@@ -1,0 +1,89 @@
+@use 'src/common/styles/variables/colors';
+
+$-icon-height: 4px;
+$-transition-delay: 200ms;
+$-hover-color: colors.$pink-1;
+
+.menu {
+    display: flex;
+    background-color: inherit;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em;
+    color: inherit;
+    border: none;
+    transition: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: inherit;
+    }
+}
+
+.menu-icon {
+    width: calc($-icon-height * 7);
+    height: calc($-icon-height * 5);
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.menu-icon__line {
+    background-color: currentColor;
+    position: relative;
+    display: block;
+    border-radius: $-icon-height;
+    width: 100%;
+    height: $-icon-height;
+    transition: transform $-transition-delay ease-in-out;
+
+    &::before,
+    &::after {
+        @extend .menu-icon__line;
+        content: '';
+        position: absolute;
+        left: 0;
+    }
+
+    &::before {
+        transform: translateY(calc($-icon-height * -1) * 2);
+    }
+
+    &::after {
+        transform: translateY(calc($-icon-height * 2));
+    }
+}
+
+.menu:hover .menu-icon__line {
+    background-color: $-hover-color;
+}
+
+.menu--open .menu-icon__line {
+    background-color: transparent;
+
+    &::before,
+    &::after {
+        background-color: $-hover-color;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+
+.menu--open:hover .menu-icon__line {
+    background-color: transparent;
+
+    &::before,
+    &::after {
+        background-color: $-hover-color;
+    }
+}

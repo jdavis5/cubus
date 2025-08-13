@@ -1,0 +1,30 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/variables/colors';
+
+.header {
+    grid-area: _header;
+    position: fixed;
+    height: var(--base-header-height);
+    inset: 0;
+    background-color: colors.$white;
+    color: colors.$black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.2em;
+    padding: 0.5em 1em;
+    isolation: isolate;
+    z-index: 1;
+}
+
+.menu-nav {
+    display: none;
+}
+
+@include breakpoints.select('md') {
+    .menu-nav {
+        display: flex;
+        flex-direction: column;
+    }
+}

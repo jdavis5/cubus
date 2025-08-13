@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use 'src/common/styles/variables/breakpoints' as bp;
+
+@mixin select($name) {
+    @if map-has-key(bp.$breakpoints, $name) {
+        @media all and (max-width: map.get(bp.$breakpoints, $name)) {
+            @content;
+        }
+    } @else {
+        @warn 'Unknown breakpoint';
+    }
+}

@@ -1,0 +1,123 @@
+@use 'src/common/styles/mixins/highlight';
+@use 'src/common/styles/variables/colors';
+@use 'src/common/styles/variables/fonts';
+
+$-border-color: colors.$grey-14;
+$-border-radius: 0.5em;
+$-transition-speed: 200ms;
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: $-border-radius;
+    transition: box-shadow $-transition-speed ease-in;
+
+    &:hover {
+        box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.5);
+    }
+}
+
+.plan-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: $-border-radius $-border-radius 0 0;
+    min-width: 250px;
+    background-color: colors.$white;
+    border: solid 1px $-border-color;
+    border-bottom-width: 0;
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em 0;
+}
+
+.plan__name {
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-family: fonts.$serif;
+    text-align: center;
+}
+
+.plan__cost {
+    text-align: center;
+}
+
+.plan__select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.4em;
+    overflow: hidden;
+}
+
+.cost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25em;
+}
+
+.cost__price {
+    font-size: 2rem;
+}
+
+.cost__unit {
+    margin-left: 0.5ch;
+    font-size: 0.9rem;
+}
+
+.plan-details {
+    border-top: solid 1px $-border-color;
+    padding: 1em;
+}
+
+.plan-details__heading {
+    font-weight: bold;
+}
+
+.details-list {
+    padding: 0;
+}
+
+.details-list__item {
+    list-style-type: none;
+    list-style-position: inside;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.details-list__item svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: colors.$green-6;
+}
+
+.edge {
+    position: relative;
+    z-index: 2;
+    @include highlight.bg('hl3');
+    border-radius: 0 0 $-border-radius $-border-radius;
+    height: 0.5em;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        @include highlight.bg('hl2');
+        border-radius: 0 0 $-border-radius $-border-radius;
+        transition: opacity $-transition-speed ease-in;
+        opacity: 0;
+    }
+}
+
+.card-container:hover .edge {
+    &::before {
+        opacity: 1;
+    }
+}

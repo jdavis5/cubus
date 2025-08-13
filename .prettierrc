@@ -1,0 +1,28 @@
+{
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "printWidth": 80,
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "importOrder": [
+        "(.*)[.]s?css",
+        "^react$",
+        "^next/(.*)$",
+        "<THIRD_PARTY_MODULES>",
+        "^[./]",
+        "^src/"
+    ],
+    "importOrderSeparation": false,
+    "importOrderSortSpecifiers": true,
+    "overrides": [
+        {
+            "files": "*.md",
+            "options": {
+                "printWidth": 80,
+                "proseWrap": "never",
+                "tabWidth": 2
+            }
+        }
+    ]
+}

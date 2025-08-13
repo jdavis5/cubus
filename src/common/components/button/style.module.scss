@@ -1,0 +1,82 @@
+@use 'src/common/styles/variables/colors';
+
+.button {
+    cursor: pointer;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 0;
+    width: fit-content;
+    font-weight: bold;
+    white-space: nowrap;
+    border: solid 1px transparent;
+    border-radius: 0.25em;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    letter-spacing: 0.05ch;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+    background-color: colors.$black;
+    color: colors.$white;
+    font-size: 0.9rem;
+    text-wrap: wrap;
+
+    &:hover {
+        text-decoration: none;
+        background-color: colors.$purple-5;
+        color: colors.$white;
+    }
+
+    &:active {
+        transition: none;
+        background-color: colors.$purple-9;
+    }
+
+    &:disabled,
+    &:disabled:hover {
+        cursor: not-allowed;
+        background-color: colors.$grey-14;
+        color: colors.$grey-6;
+    }
+}
+
+.button--pill {
+    border-radius: 1.5em;
+}
+
+.link-button {
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    color: colors.$blue-1;
+    transition: color 125ms;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    text-underline-offset: 0.5ch;
+    transition: color 125ms;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:disabled {
+        color: colors.$grey-6;
+        background-color: inherit;
+
+        &:hover,
+        &:active {
+            color: colors.$grey-6;
+            background-color: inherit;
+        }
+    }
+}
+
+.icon {
+    margin-right: 0.5em;
+    display: flex;
+    align-items: center;
+}

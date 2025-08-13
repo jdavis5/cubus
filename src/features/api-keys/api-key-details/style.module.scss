@@ -1,0 +1,42 @@
+@use 'src/common/styles/variables/colors';
+@use 'src/common/styles/variables/fonts';
+
+.overview {
+    flex-grow: 1;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.overview__value {
+    font-family: fonts.$monospace;
+    letter-spacing: 0;
+    font-size: 1rem;
+}
+
+.overview__meta {
+    color: colors.$grey-6;
+    font-weight: 600;
+}
+
+.overview-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.overview-title__name {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.overview-title__status {
+    background-color: colors.$grey-12;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    display: inline-flex;
+    font-weight: bold;
+    margin-right: 0.5em;
+    word-break: normal;
+}

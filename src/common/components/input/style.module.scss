@@ -1,0 +1,16 @@
+@use 'src/common/styles/variables/colors';
+
+.input {
+    padding: 0.75em;
+    border: none;
+    width: 100%;
+    background-color: inherit;
+    outline: none;
+    color: inherit;
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: colors.$grey-16;
+        color: colors.$grey-4;
+    }
+}

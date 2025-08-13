@@ -1,0 +1,20 @@
+@use 'src/common/styles/mixins/breakpoints';
+
+.item-overview {
+    padding: 1em;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.action-button {
+    width: 100%;
+}
+
+@include breakpoints.select('sm') {
+    .action-button {
+        width: auto;
+    }
+}

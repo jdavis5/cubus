@@ -1,0 +1,109 @@
+generator client {
+    provider    = "prisma-client-js"
+    output      = ".generated/client"
+}
+
+generator zod {
+    provider                = "zod-prisma-types"
+    output                  = ".generated/zod"
+    createInputTypes        = false
+    addInputTypeValidation  = false
+}
+
+datasource db {
+    provider    = "mongodb"
+    url         = env("MONGODB_URI")
+}
+
+model ApiKey {
+    id              String      @id @default(auto()) @map("_id") @db.ObjectId
+    name            String
+    value           String      @unique
+    /// @zod.string.length(4)
+    lastFourChars   String      @map("last_four_chars")
+    user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId          String      @map("user_id") @db.ObjectId 
+    generatedAt     DateTime    @default(now()) @map("generated_at")
+    lastUsedAt      DateTime?   @map("last_used_at")
+    isEnabled       Boolean     @default(true) @map("is_enabled")
+
+    @@map("keys")
+}
+
+enum PlanOptions {
+    FREE
+    BASIC
+    PRO
+}
+
+model Plan {
+    id              String          @id @default(auto()) @map("_id") @db.ObjectId
+    option          PlanOptions     @unique
+    name            String
+    limit           Int
+    price           String
+    isAvailable     Boolean         @default(true) @map("is_available")
+    subscription    Subscription[]  
+
+    @@map("plans")
+    @@index([option, isAvailable]) 
+}
+
+model Subscription {
+    id          String      @id @default(auto()) @map("_id") @db.ObjectId
+    user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId      String      @unique @map("user_id") @db.ObjectId 
+    plan        Plan        @relation(fields: [planOption], references: [option])
+    planOption  PlanOptions @map("plan") @default(FREE)
+
+    @@map("subscriptions")
+}
+
+enum TokenOptions {
+    SESSION
+    PASSWORD_RESET
+    EMAIL_UPDATE
+    ACCOUNT_ACTIVATION
+}
+
+model Token {
+    id          String          @id @default(auto()) @map("_id") @db.ObjectId
+    type        TokenOptions
+    user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId      String          @map("user_id") @db.ObjectId 
+    createdAt   DateTime        @default(now()) @map("created_at")
+    expiresAt   DateTime?       @map("expires_at")
+    value       String          @unique
+
+    @@map("tokens")
+    @@index([type, value])
+}
+
+enum RoleOptions {
+    BASIC
+    ADMIN
+}
+
+enum AccountOptions {
+    BASIC
+}
+
+model User {
+    id                  String          @id @default(auto()) @map("_id") @db.ObjectId
+    accountType         AccountOptions  @default(BASIC)
+    firstName           String          @map("first_name")
+    surname             String
+    /// @zod.string.email()
+    email               String          @unique
+    password            String
+    roles               RoleOptions[]   @default([BASIC])
+    registeredAt        DateTime        @default(now()) @map("registered_at")
+    lastLoginAt         DateTime?       @map("last_login_at")
+    emailVerifiedAt     DateTime?       @map("email_verified_at")
+    tokens              Token[]         
+    apiKeys             ApiKey[]        
+    subscription        Subscription?   
+    unconfirmedEmail    String?       
+
+    @@map("users")
+}

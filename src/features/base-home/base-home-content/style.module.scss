@@ -1,0 +1,81 @@
+@use 'src/common/styles/mixins/breakpoints';
+@use 'src/common/styles/mixins/highlight';
+@use 'src/common/styles/variables/colors';
+@use 'src/common/styles/variables/fonts';
+
+$-margin: 2em;
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: calc($-margin * -1) calc(1em * -1);
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: $-margin 1em;
+    min-height: calc(100vh - var(--base-header-height));
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    min-height: calc(100vh - var(--base-header-height));
+    padding: calc(2em + $-margin) 1em;
+}
+
+.content-container {
+    display: flex;
+    gap: 6em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro .content {
+    width: min(800px, 100%);
+    flex-grow: 1;
+    line-height: 2rem;
+}
+
+.intro:nth-of-type(even) {
+    background: colors.$black;
+    color: colors.$white;
+}
+
+.heading {
+    font-weight: 400;
+    text-align: center;
+    font-family: fonts.$serif;
+}
+
+.heading__highlight {
+    font-weight: 800;
+    text-align: center;
+    @include highlight.text('hl1');
+}
+
+.hero .heading {
+    font-size: clamp(2.8rem, 12vw, 5rem);
+}
+
+.hero .heading__highlight {
+    @include highlight.text('hl2');
+}
+
+.intro .heading {
+    font-size: clamp(2rem, 8vw, 4rem);
+}
+
+@include breakpoints.select('lg') {
+    .hero {
+        flex-direction: column;
+    }
+}

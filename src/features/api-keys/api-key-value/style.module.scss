@@ -1,0 +1,16 @@
+@use 'src/common/styles/variables/colors';
+
+.key {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    background-color: colors.$grey-18;
+    border-radius: 0.25em;
+    width: fit-content;
+    word-break: break-word;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
