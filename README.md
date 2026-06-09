@@ -13,7 +13,7 @@
 ## Introduction
 
 > [!NOTE]  
-> This project was originally developed during 2024–2025 and is not under active development.
+> This project was originally developed during 2024–2025 and is no longer under active development.
 
 Cubus is a full-stack SaaS application providing user account management, API key generation, and tiered access control based on subscription level, with a documented RESTful API secured via API key authentication.
 
@@ -40,9 +40,9 @@ Authentication is handled with custom logic, avoiding third-party libraries to m
 
 ### Technical features
 
+- Build-time validation and type-safe environment variables using the custom [env-nextjs](https://github.com/jdavis5/env-nextjs) library
 - Session-based authentication
 - Cross-Site Request Forgery (CSRF) protection using the double-submit cookie pattern
-- [Validation and type safety for Next.js environment variables](#validation-of-environment-variables)
 - Multiple Prisma clients utilising [custom extensions](https://www.prisma.io/docs/orm/prisma-client/client-extensions)
 - Zod schemas [generated](https://www.prisma.io/docs/orm/prisma-schema/overview/generators) from [comment enhanced](https://www.prisma.io/docs/orm/prisma-schema/overview#comments) Prisma models
 - A type-safe end-to-end internal API combining tRPC with Zod
@@ -188,7 +188,7 @@ A list of dependencies added to the project can be found below.
 
 ### Validation of environment variables
 
-This project uses [env-nextjs](https://github.com/jdavis5/env-nextjs) to provide build-time validation and type-safe environment variables in Next.js.
+This project integrates the custom [env-nextjs](https://github.com/jdavis5/env-nextjs) library to provide build-time validation of environment variables.
 
 ### Overview of environment variables
 
