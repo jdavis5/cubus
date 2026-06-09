@@ -36,7 +36,7 @@ export const AccountMobileMenu = () => {
     const menuRef = React.useRef<HTMLDivElement>(null)
 
     /**
-     * Closes the menu if the menu toggle disappears
+     * Closes the menu if the menu toggle disappears.
      */
     React.useEffect(() => {
         if (isToggleVisible === false) {

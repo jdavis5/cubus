@@ -6,7 +6,7 @@ import { ApiInvalidKeyProblem } from 'src/public-api/common/problem-details/api-
 const apiKeySchema = z.string().optional()
 
 /**
- * Parses the request into a valid API key
+ * Parses the request into a valid API key.
  */
 export const parseApiKey = async (req: NextApiRequest) => {
     const key = apiKeySchema.parse(req.headers['authorization'])

@@ -4,7 +4,7 @@ import { mailer } from 'src/server/common/mailer/mailer'
 import { Signature } from 'src/server/common/mailer/templates/signature'
 
 /**
- * Send an email with a `ACCOUNT_ACTIVATION` token
+ * Send an email with a `ACCOUNT_ACTIVATION` token.
  */
 export const accountActivationMailer = (options: {
     email: string

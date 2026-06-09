@@ -1,0 +1,13 @@
+@use 'src/common/styles/variables/colors';
+@use 'src/common/styles/variables/fonts';
+
+.path {
+    font-family: fonts.$monospace;
+    font-weight: bold;
+    display: inline-flex;
+    background-color: colors.$grey-18;
+    color: colors.$black;
+    font-size: 0.9em;
+    padding: 1em;
+    border-radius: 0.25em;
+}

@@ -1,9 +1,10 @@
 import prisma from 'prisma/main'
 import { TokenOptions } from 'prisma/main/client'
+import { invariant } from 'src/common/invariant'
 
 /**
  * Returns a summary for the `PASWORD_RESET` token that matches
- * the provided value
+ * the provided value.
  */
 export const findValidPasswordResetSummary = async (value: string) => {
     const record = await prisma.token.findFirst({
@@ -22,12 +23,16 @@ export const findValidPasswordResetSummary = async (value: string) => {
             }
         }
     })
+
     if (!record) {
         return null
     }
+
+    // The query ensures that expiresAt is non-null.
+    invariant(record.expiresAt, 'Expected expiresAt to be non-null')
+
     return {
         ...record,
-        // Assert non-null properties
-        expiresAt: record.expiresAt!
+        expiresAt: record.expiresAt
     }
 }

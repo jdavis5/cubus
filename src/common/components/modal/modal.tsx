@@ -12,7 +12,6 @@ export const Modal = ({ children }: ModalProps) => {
         return null
     }
 
-    // Attach as a portal to avoid styles being inherited
     return createPortal(<ModalContainer>{children}</ModalContainer>, root)
 }
 

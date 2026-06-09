@@ -6,7 +6,7 @@ import { ApiTokenExpiredError } from 'src/server/common/api-errors'
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Submit an `ACCOUNT_ACTIVATION` token
+ * Submit an `ACCOUNT_ACTIVATION` token.
  */
 export const submitActivation = appPublicProcedure
     .input(

@@ -20,14 +20,14 @@ export type AuthenticatedSession = {
 }
 
 /**
- * Returns an application session
+ * Returns an application session.
  */
 export const useSession = (): Session => {
     return useSessionContext()
 }
 
 /**
- * Type guard that narrows the application session if user data is present
+ * Type guard that narrows the application session if user data is present.
  */
 export const isAuthenticatedSession = (
     session: Session | AuthenticatedSession
@@ -36,7 +36,7 @@ export const isAuthenticatedSession = (
 }
 
 /**
- * Returns an authenticated application session
+ * Returns an authenticated application session.
  */
 export const useAuthenticatedSession = (): AuthenticatedSession => {
     const context = useSessionContext()

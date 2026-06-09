@@ -1,7 +1,7 @@
 import prisma from 'prisma/mflix'
 
 /**
- * Finds a movie with the given ID
+ * Finds a movie with the given ID.
  */
 export const findById = (id: string) => {
     return prisma.movies.findFirst({

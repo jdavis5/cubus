@@ -10,7 +10,7 @@ import { compareHash } from 'src/server/common/hashing'
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Submit an `EMAIL_UPDATE` token
+ * Submit an `EMAIL_UPDATE` token.
  */
 export const submitEmailUpdate = appPublicProcedure
     .input(
@@ -28,6 +28,7 @@ export const submitEmailUpdate = appPublicProcedure
             if (!summary) {
                 throw new ApiTokenExpiredError()
             }
+
             const existingUser = await prisma.user.findFirst({
                 where: {
                     email: summary.user.unconfirmedEmail
@@ -36,6 +37,7 @@ export const submitEmailUpdate = appPublicProcedure
             if (existingUser) {
                 throw new ApiTokenExpiredError()
             }
+
             const isMatch = await compareHash(
                 opts.input.password,
                 summary.user.password
@@ -43,6 +45,7 @@ export const submitEmailUpdate = appPublicProcedure
             if (!isMatch) {
                 throw new ApiIncorrectPasswordError()
             }
+
             await prisma.user.update({
                 where: {
                     id: summary.userId
@@ -52,7 +55,9 @@ export const submitEmailUpdate = appPublicProcedure
                     email: summary.user.unconfirmedEmail
                 }
             })
+
             await prisma.token.removeEmailUpdate(summary.userId)
+
             await destroySession(opts.ctx.req, opts.ctx.res)
         })
     )

@@ -19,5 +19,5 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     }
 )
 
-// Updates the displayName after using forwardRef
+// Updates the displayName after using forwardRef.
 Switch.displayName = 'Switch'

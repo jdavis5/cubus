@@ -21,14 +21,14 @@ type Filters = {
 }
 
 /**
- * Finds paginated records that match the provided filters
+ * Finds paginated records that match the provided filters.
  */
 export const paginatedFindByFilters = async (
     filters: Filters,
     options: { page: number; pageSize: number }
 ) => {
     /**
-     * Creates an aggregation filter
+     * Creates an aggregation filter.
      */
     const createFilter = (filters: Filters) => {
         return {
@@ -115,7 +115,7 @@ export const paginatedFindByFilters = async (
     }
     // As Prisma does not support insensitive scalar queries,
     // a raw aggregation query must be used to retrieve a list of IDs
-    // that can be passed back into a Prisma query
+    // that can be passed back into a Prisma query.
     const rawResults = await prisma.movies.aggregateRaw({
         pipeline: [
             {

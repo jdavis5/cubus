@@ -11,6 +11,7 @@ export const t = initTRPC.context<Context>().create({
     transformer: SuperJSON,
     errorFormatter(opts) {
         const { shape, error } = opts
+
         if (error.cause instanceof ApiError) {
             if (error.cause instanceof ApiUnauthenticatedError) {
                 throw new TRPCError({
@@ -18,6 +19,7 @@ export const t = initTRPC.context<Context>().create({
                     message: error.cause.message
                 })
             }
+
             if (error.cause instanceof ApiAccessUnauthorizedError) {
                 throw new TRPCError({
                     code: 'FORBIDDEN',
@@ -25,6 +27,7 @@ export const t = initTRPC.context<Context>().create({
                 })
             }
         }
+
         return shape
     }
 })

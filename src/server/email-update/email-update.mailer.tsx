@@ -4,7 +4,7 @@ import { mailer } from 'src/server/common/mailer/mailer'
 import { Signature } from 'src/server/common/mailer/templates/signature'
 
 /**
- * Send an email with a `EMAIL_UPDATE` token
+ * Send an email with a `EMAIL_UPDATE` token.
  */
 export const emailUpdateMailer = (options: {
     email: string
@@ -14,6 +14,7 @@ export const emailUpdateMailer = (options: {
         `/verify/update-email/${options.token}`,
         env.NEXT_PUBLIC_BASE_URL
     )
+
     return mailer({
         to: options.email,
         subject: 'Change your email - Cubus',

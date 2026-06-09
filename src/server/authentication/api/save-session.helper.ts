@@ -11,7 +11,7 @@ import {
 import { serializeSession } from 'src/server/authentication/session.cookies'
 
 /**
- * Saves a new session
+ * Saves a new session.
  */
 export const saveSession = async (
     _: NextApiRequest,
@@ -20,6 +20,7 @@ export const saveSession = async (
 ) => {
     const token = await prisma.token.createSession(userId)
     const csrf = generateCsrfToken()
+
     res.setHeader('Set-Cookie', [
         serializeSession(token),
         serializeCsrf(csrf),

@@ -1,5 +1,5 @@
 /**
- * Formats a price into a number
+ * Formats a numeric value into a localised price string.
  */
 export const formatPrice = (
     value: string | number,

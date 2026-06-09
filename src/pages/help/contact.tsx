@@ -12,7 +12,7 @@ const HelpContactPage: PageComponent = () => {
     return (
         <>
             <Head>
-                <title>{pageTitle('Contact')}</title>
+                <title>{pageTitle('Contact us')}</title>
                 <meta
                     name="description"
                     content="A description about this page"
@@ -23,20 +23,73 @@ const HelpContactPage: PageComponent = () => {
                 <Section>
                     <Heading as="h1">Contact us</Heading>
                     <p>
-                        In nulla posuere sollicitudin aliquam ultrices.
-                        Pellentesque elit ullamcorper dignissim cras tincidunt
-                        lobortis feugiat vivamus. Auctor elit sed vulputate mi
-                        sit amet. Faucibus turpis in eu mi. Pretium aenean
-                        pharetra magna ac placerat vestibulum lectus. Massa
-                        tincidunt dui ut ornare lectus sit amet est placerat.
-                        Magna sit amet purus gravida quis blandit turpis. Arcu
-                        dictum varius duis at consectetur lorem donec massa
-                        sapien. Lacus vel facilisis volutpat est velit egestas
-                        dui id. Mi bibendum neque egestas congue quisque egestas
-                        diam. Diam maecenas sed enim ut sem viverra. Molestie a
-                        iaculis at erat pellentesque. Massa placerat duis
-                        ultricies lacus sed turpis tincidunt id aliquet. Et
-                        tortor at risus viverra adipiscing at.
+                        Egestas congue quisque egestas diam in. A diam
+                        sollicitudin tempor id eu nisl nunc mi ipsum. Nulla
+                        aliquet enim tortor at auctor urna. Dolor sit amet
+                        consectetur adipiscing elit ut. Magna fermentum iaculis
+                        eu non diam phasellus. Pulvinar mattis nunc sed blandit
+                        libero volutpat. Sapien et ligula ullamcorper malesuada
+                        proin libero. Et netus et malesuada fames ac turpis
+                        egestas integer eget. Ultricies integer quis auctor elit
+                        sed vulputate. Eget mi proin sed libero. Sodales ut eu
+                        sem integer vitae justo eget. Dui ut ornare lectus sit
+                        amet est placerat in egestas. Pharetra diam sit amet
+                        nisl suscipit adipiscing. Ultricies mi quis hendrerit
+                        dolor magna eget est lorem.
+                    </p>
+                    <p>
+                        Pharetra pharetra massa massa ultricies mi quis
+                        hendrerit dolor. Elementum curabitur vitae nunc sed. Et
+                        molestie ac feugiat sed lectus vestibulum mattis. Donec
+                        pretium vulputate sapien nec sagittis. Consectetur
+                        adipiscing elit duis tristique sollicitudin nibh sit
+                        amet commodo. Fermentum odio eu feugiat pretium nibh. A
+                        iaculis at erat pellentesque adipiscing commodo. Eget
+                        dolor morbi non arcu risus quis varius. Posuere urna nec
+                        tincidunt praesent semper feugiat nibh sed. Leo integer
+                        malesuada nunc vel risus commodo. Nisl condimentum id
+                        venenatis a condimentum vitae. Vel facilisis volutpat
+                        est velit egestas dui. Accumsan sit amet nulla facilisi
+                        morbi tempus. Sed blandit libero volutpat sed cras
+                        ornare arcu. Feugiat in ante metus dictum. Gravida in
+                        fermentum et sollicitudin ac orci. Amet massa vitae
+                        tortor condimentum lacinia quis vel. Amet tellus cras
+                        adipiscing enim eu. Urna et pharetra pharetra massa
+                        massa ultricies mi quis.
+                    </p>
+                    <p>
+                        Magna ac placerat vestibulum lectus mauris ultrices.
+                        Egestas quis ipsum suspendisse ultrices gravida dictum
+                        fusce. Cras sed felis eget velit. Euismod nisi porta
+                        lorem mollis aliquam ut porttitor leo a. Et sollicitudin
+                        ac orci phasellus. Montes nascetur ridiculus mus mauris
+                        vitae ultricies. Amet facilisis magna etiam tempor orci
+                        eu lobortis elementum nibh. Mollis aliquam ut porttitor
+                        leo a diam sollicitudin tempor. Venenatis lectus magna
+                        fringilla urna porttitor rhoncus dolor purus. Feugiat
+                        scelerisque varius morbi enim nunc faucibus. Erat nam at
+                        lectus urna. Fringilla est ullamcorper eget nulla.
+                        Ultrices tincidunt arcu non sodales neque sodales. Vitae
+                        auctor eu augue ut lectus arcu bibendum at. Quis commodo
+                        odio aenean sed adipiscing diam donec adipiscing.
+                        Pellentesque habitant morbi tristique senectus et.
+                        Pellentesque habitant morbi tristique senectus.
+                    </p>
+                    <p>
+                        Vel pretium lectus quam id leo in vitae turpis. Semper
+                        risus in hendrerit gravida rutrum quisque non. Mi in
+                        nulla posuere sollicitudin. Eget nunc lobortis mattis
+                        aliquam faucibus. Aliquam ut porttitor leo a diam
+                        sollicitudin tempor. Arcu vitae elementum curabitur
+                        vitae nunc sed velit dignissim. Non diam phasellus
+                        vestibulum lorem sed risus ultricies tristique nulla.
+                        Mauris nunc congue nisi vitae suscipit tellus mauris.
+                        Egestas tellus rutrum tellus pellentesque eu tincidunt
+                        tortor aliquam nulla. Maecenas accumsan lacus vel
+                        facilisis volutpat est. Fringilla urna porttitor rhoncus
+                        dolor purus non enim praesent. Elit sed vulputate mi sit
+                        amet mauris commodo. Etiam tempor orci eu lobortis.
+                        Egestas sed sed risus pretium.
                     </p>
                 </Section>
             </Container>

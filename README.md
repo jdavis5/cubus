@@ -18,6 +18,9 @@ This project is a responsive web application built with [React](https://react.de
 
 Authentication is handled with custom logic, avoiding third-party libraries to make architectural and design decisions more visible. External UI libraries are also excluded in favour of CSS Modules and Sass utilities, which provide scoped, modular, and maintainable styles.
 
+> [!NOTE]  
+> This project was originally developed during 2024–2025 and is not under active development.
+
 ## Features
 
 ### Interactive features
@@ -39,17 +42,13 @@ Authentication is handled with custom logic, avoiding third-party libraries to m
 
 - Session-based authentication
 - Cross-Site Request Forgery (CSRF) protection using the double-submit cookie pattern
-- Environment variable validation using Zod schemas, including [build time validation](#build-time-validation)
+- [Validation and type safety for Next.js environment variables](#validation-of-environment-variables) 
 - Multiple Prisma clients utilising [custom extensions](https://www.prisma.io/docs/orm/prisma-client/client-extensions)
 - Zod schemas [generated](https://www.prisma.io/docs/orm/prisma-schema/overview/generators) from [comment enhanced](https://www.prisma.io/docs/orm/prisma-schema/overview#comments) Prisma models
 - A type-safe end-to-end internal API combining tRPC with Zod
 - A RESTful public API utilising Next.js API route handlers
 - [OpenAPI OAS3](https://swagger.io/specification/v3/) specification that is generated for the versioned public API
 - Public API responses using [RFC 9457 - Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457)
-
-## Security notice
-
-This application is not affected by the critical authorisation bypass vulnerability in Next.js middleware ([GHSA-f82v-jwr5-mffw](https://github.com/vercel/next.js/security/advisories/GHSA-f82v-jwr5-mffw)).
 
 ## Potential improvements
 
@@ -139,62 +138,57 @@ A list of dependencies added to the project can be found below.
 
 ### `dependencies`
 
-| Name | Description |
-| :-- | :-- |
+| Package | Description |
+| --- | --- | --- |
 | [@hookform/resolvers](https://react-hook-form.com/) | Validation resolvers for React Hook Form |
-| [@tanstack/react-query](https://tanstack.com/query/v4/docs/react/adapters/react-query) | Data fetching/caching/synchronisation library |
-| [@trpc/client](https://trpc.io/) | Communicate with a tRPC server on the client side |
-| [@trpc/next](https://trpc.io/) | Connect a tRPC router to Next.js |
-| [@trpc/react-query](https://trpc.io/) | Integrates React Query with tRPC |
-| [@trpc/server](https://trpc.io/) | Create tRPC routers and connect them to a server |
-| [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme) | Password hashing library |
-| [clsx](https://github.com/lukeed/clsx#readme) | Utility for constructing className conditionally |
-| [cookie](https://github.com/jshttp/cookie#readme) | Basic HTTP cookie parsing and serialising |
-| [date-fns](https://date-fns.org/) | Date manipulation library |
-| [jiti](https://github.com/unjs/jiti#readme) | Runtime Typescript and ESM support for Node.js |
-| [nanoid](https://github.com/ai/nanoid#readme) | Creates URL friendly unique strings |
-| [next](https://nextjs.org/) | Next.js React framework |
-| [nodemailer](https://nodemailer.com/) | Sends emails from Node.js |
-| [prisma](https://www.prisma.io/) | TypeScript ORM for database modelling and interaction |
-| [react-error-boundary](https://github.com/bvaughn/react-error-boundary#readme) | React [Error Boundary](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) component |
-| [react-hook-form](https://react-hook-form.com/) | React form library |
-| [react-icons](https://react-icons.github.io/react-icons/) | Popular SVG icons |
-| [react-transition-group](https://reactcommunity.org/react-transition-group/) | Manages animation state for React components |
-| [superjson](https://github.com/blitz-js/superjson#readme) | Provides serialization and deserialization of JavaScript values into a superset of JSON |
-| [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) | Generates OpenAPI specification from JSDoc annotations |
-| [swagger-ui-react](https://github.com/swagger-api/swagger-ui) | Visualises OpenAPI specification |
-| [zod](https://zod.dev/) | TypeScript schema validation and type inference |
-| [zxcvbn](https://github.com/dropbox/zxcvbn#readme) | Estimates password strength |
+| [@tanstack/react-query](https://tanstack.com/query/v4/docs/react/adapters/react-query) | Data fetching, caching and synchronisation |
+| [@trpc/client](https://trpc.io/) | tRPC client for server communication |
+| [@trpc/next](https://trpc.io/) | tRPC router integration for Next.js |
+| [@trpc/react-query](https://trpc.io/) | React Query integration for tRPC |
+| [@trpc/server](https://trpc.io/) | tRPC routers and server integration |
+| [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme) | Password hashing |
+| [clsx](https://github.com/lukeed/clsx#readme) | Conditional className construction | # |
+| [cookie](https://github.com/jshttp/cookie#readme) | HTTP cookie parsing and serialization |
+| [date-fns](https://date-fns.org/) | Date manipulation and formatting |
+| [jiti](https://github.com/unjs/jiti#readme) | Node.js loader for TypeScript and ECMAScript modules with extensionless imports |
+| [nanoid](https://github.com/ai/nanoid#readme) | URL friendly unique ID generation |
+| [next](https://nextjs.org/) | React framework |
+| [nodemailer](https://nodemailer.com/) | Email delivery for Node.js |
+| [prisma](https://www.prisma.io/) | TypeScript ORM for database modelling and querying |
+| [react-error-boundary](https://github.com/bvaughn/react-error-boundary#readme) | [Error boundary](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) component for React |
+| [react-hook-form](https://react-hook-form.com/) | Form handling for React |
+| [react-icons](https://react-icons.github.io/react-icons/) | Popular SVG icons for React |
+| [react-transition-group](https://reactcommunity.org/react-transition-group/) | Animation state management for React components |
+| [superjson](https://github.com/blitz-js/superjson#readme) | Serialisaton and deserialisation of JSON with additional types |
+| [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) | OpenAPI specification generation from JSDoc comments |
+| [swagger-ui-react](https://github.com/swagger-api/swagger-ui) | OpenAPI documentation visualisation for React |
+| [zod](https://zod.dev/) | TypeScript schema validation |
+| [zxcvbn](https://github.com/dropbox/zxcvbn#readme) | Password strength estimation |
 
 ### `devDependencies`
 
 | Name | Description |
 | :-- | :-- |
-| [@babel/plugin-transform-class-static-block](https://babel.dev/docs/en/next/babel-plugin-transform-class-static-block) | Enables static class block syntax in JavaScript |
-| [@trivago/prettier-plugin-sort-imports](https://gialwaysthub.com/trivago/prettier-plugin-sort-imports#readme) | A prettier plugin to sort import declarations by provided Regular Expression order |
-| [babel-plugin-superjson-next](https://github.com/blitz-js/babel-plugin-superjson-next#readme) | Adds SuperJSON to Next.js pages |
-| [dotenv-cli](https://github.com/entropitor/dotenv-cli#readme) | Loads environment variables |
-| [eslint](https://eslint.org/) | Analyses code for issues |
-| [eslint-config-next](https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-config) | Default configuration used by Next.js |
-| [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier#readme) | Configuration for Prettier |
-| [husky](https://github.com/typicode/husky#readme) | Management for git hooks |
-| [lint-staged](https://github.com/lint-staged/lint-staged#readme) | Runs tasks on staged git files |
+| [@babel/plugin-transform-class-static-block](https://babel.dev/docs/en/next/babel-plugin-transform-class-static-block) | Static class block syntax in JavaScript |
+| [@trivago/prettier-plugin-sort-imports](https://gialwaysthub.com/trivago/prettier-plugin-sort-imports#readme) | Import declaration sorting by Regular Expression |
+| [babel-plugin-superjson-next](https://github.com/blitz-js/babel-plugin-superjson-next#readme) | SuperJSON integration for Next.js pages |
+| [dotenv-cli](https://github.com/entropitor/dotenv-cli#readme) | Environment variable loading for CLI commands |
+| [env-nextjs](https://github.com/jdavis5/env-nextjs) | Validation and type safety for Next.js environment variables |
+ | [eslint](https://eslint.org/) | Code analysis for JavaScript and TypeScript |
+| [eslint-config-next](https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-config) | Default Next.js ESLint configuration |
+| [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier#readme) | ESLint configuration to disable Prettier conflicts |
+| [husky](https://github.com/typicode/husky#readme) | Git hook management |
+| [lint-staged](https://github.com/lint-staged/lint-staged#readme) | Pre-commit tasks for staged git files |
 | [prettier](https://prettier.io/) | Code formatting |
-| [tsx](https://github.com/privatenumber/tsx#readme) | Runs TypeScript from the command line |
+| [tsx](https://github.com/privatenumber/tsx#readme) | TypeScript runtime for scripts |
 | [typescript](https://www.typescriptlang.org/) | TypeScript language |
-| [zod-prisma-types](https://github.com/chrishoermann/zod-prisma-types#readme) | Creates Zod schemas and types from Prisma models with rich comment support |
+| [zod-prisma-types](https://github.com/chrishoermann/zod-prisma-types#readme) | Prisma generator for Zod schemas and types with rich comments |
 
 ## Environment variables
 
-### Build time validation
+### Validation of environment variables
 
-This project validates environment variables against [Zod](https://zod.dev/) schemas at build time to catch configuration errors early. Validated environment variables also benefit from autocompletion when imported into the appropriate context.
-
-The environment definitions in `env/client.js` and `env/server.js` include a `schema` property that defines how each variable should be validated.
-
-If validation fails, an error will be thrown during the build process.
-
-For more information on how validation is implemented, see [env/README.md](./env/README.md).
+This project uses [env-nextjs](https://github.com/jdavis5/env-nextjs) to provide build-time validation and type-safe environment variables in Next.js.
 
 ### Overview of environment variables
 
@@ -214,19 +208,21 @@ For an example implementation of environment variables, see [.env.example](./.en
 
 ## Getting started
 
-### Prerequisites
+### Cloning the repository
 
-Ensure that the following are installed:
+Run the following to clone the repository and navigate to the project root:
 
-- [Node.js](https://nodejs.org/) (version 22.0.0 or higher) to run the application
-- [pnpm](https://pnpm.io/) to install dependencies and run scripts
+```sh
+git clone https://github.com/jdavis5/cubus.git
+cd cubus
+```
 
 ### Installing dependencies
 
 > [!IMPORTANT]  
-> Ensure your `.env` file is properly configured before installing dependencies.
+> Before installing the dependencies, define the required [environment variables](#overview-of-environment-variables) in an `.env` file.
 
-Install the project dependencies with the following command:
+Install the dependencies with the following command:
 
 ```sh
 pnpm install
@@ -235,6 +231,10 @@ pnpm install
 This command automatically runs the following post-installation steps:
 
 - [Generating from Prisma schemas](#generating-from-prisma-schemas)
+
+> [!NOTE]  
+> After installation, make sure your IDE is using the workspace TypeScript version.  
+> This enables the [Next.js IDE plugin](https://nextjs.org/docs/app/api-reference/config/typescript#ide-plugin) and prevents errors caused by TypeScript version mismatches.
 
 ### Initialising connected databases
 
@@ -309,11 +309,11 @@ For example, the primary schema is located at:
 
 `prisma/main/schema.prisma`.
 
-Generated assets are located relative to their schema in the `./.generated` directory.
+Generated assets are located relative to their schema in the `./generated` directory.
 
 For example, the generated primary client is located relative to its schema at:
 
-`prisma/main/.generated/client`.
+`prisma/main/generated/client`.
 
 ### Generating from Prisma schemas
 

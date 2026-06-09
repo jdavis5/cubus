@@ -27,7 +27,7 @@ export const AccountLayoutProvider = ({
 }
 
 /**
- * Returns the context for AccountLayout
+ * Returns the context for AccountLayout.
  */
 export const useAccountLayoutContext = () => {
     const context = React.useContext(AccountLayoutContext)

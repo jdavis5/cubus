@@ -1,5 +1,5 @@
 /**
- * Throws an error if the condition is falsy
+ * Throws an error if the condition is falsy.
  */
 export function invariant(
     condition: unknown,

@@ -11,11 +11,12 @@ const csrfSchema = z
     .catch(undefined)
 
 /**
- * Verifies a CSRF token header
+ * Verifies a CSRF token header.
  */
 export const verifyCsrf = async (req: NextApiRequest) => {
     const token = csrfSchema.parse(req.headers['x-csrf-token'])
     const csrf = csrfCookie(req.cookies)
+
     if (!token || !csrf || signCsrfToken(csrf) !== token) {
         throw new ApiAccessUnauthorizedError()
     }

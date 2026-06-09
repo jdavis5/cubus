@@ -49,7 +49,7 @@ export const BaseMobileMenu = () => {
     const isToggleVisible = useBreakpointRange('md')
 
     /**
-     * Closes the menu if the menu toggle disappears
+     * Closes the menu if the menu toggle disappears.
      */
     React.useEffect(() => {
         if (isToggleVisible === false) {

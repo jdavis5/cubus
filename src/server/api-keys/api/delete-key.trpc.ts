@@ -8,7 +8,7 @@ import {
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Delete an API key
+ * Delete an API key.
  */
 export const deleteKey = appProtectedProcedure
     .input(

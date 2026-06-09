@@ -1,10 +1,10 @@
 import { PrismaClient } from './client'
-import publicApi from 'src/public-api/public-api.main.extension'
-import server from 'src/server/server.main.extension'
+import publicApi from 'src/public-api/public-api.main.prisma'
+import server from 'src/server/server.main.prisma'
 
 /**
  * A global singleton is required to prevent multiple client instances
- * caused by hot reloading
+ * caused by hot reloading.
  *
  * @see {@link https://github.com/prisma/prisma/discussions/4399}
  */

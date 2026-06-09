@@ -11,7 +11,7 @@ export type CookieAttributes = {
 export const isSecureCookies = process.env.NODE_ENV === 'production'
 
 /**
- * Creates a cookie name
+ * Returns a namespaced cookie name, adding a 'Host__' prefix for secure cookies. 
  */
 export const cookieName = (name: string) => {
     return `cubus__${isSecureCookies ? 'Host__' : ''}${name}`

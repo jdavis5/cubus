@@ -1,7 +1,7 @@
 import React from 'react'
 
 /**
- * Listens for changes to the provided media query
+ * Listens for changes to the provided media query.
  */
 export const useMediaQuery = (query: string) => {
     const [mediaQueryList, setMediaQueryList] = React.useState<MediaQueryList>()

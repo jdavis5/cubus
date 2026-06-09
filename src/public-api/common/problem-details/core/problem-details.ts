@@ -1,5 +1,5 @@
 /**
- * Problem Details specification for HTTP APIs
+ * Problem Details specification for HTTP APIs.
  *
  * {@link https://www.rfc-editor.org/rfc/rfc9457}
  */

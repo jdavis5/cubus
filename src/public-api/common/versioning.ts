@@ -1,21 +1,21 @@
 import env from 'env/server'
 
 /**
- * Tests if the given API version string is valid
+ * Tests if the given API version string is valid.
  */
 export const isValidVersionString = (value: string) => {
     const versionNumber = versionStringToNumber(value)
     return Boolean(versionNumber && isVersionInRange(versionNumber))
 }
 /**
- * Tests if a numeric API version is within a valid range
+ * Tests if a numeric API version is within a valid range.
  */
 const isVersionInRange = (version: number) => {
     return version > 0 && version <= env.API_VERSION
 }
 
 /**
- * Parses a URL into an API version string if valid, otherwise returns null
+ * Parses a URL into an API version string if valid, otherwise returns null.
  */
 export const parseVersionFromUrl = (value: string) => {
     const pattern = new RegExp(/\/api\/(v[^\/\s]+)/)
@@ -31,7 +31,7 @@ export const parseVersionFromUrl = (value: string) => {
 }
 
 /**
- * Transforms an API version string into a numeric version
+ * Transforms an API version string into a numeric version.
  */
 const versionStringToNumber = (value: string) => {
     const pattern = new RegExp(/^v(\d+)$/)

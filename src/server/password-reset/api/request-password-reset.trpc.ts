@@ -6,7 +6,7 @@ import { passwordResetMailer } from 'src/server/password-reset/password-reset.ma
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Create a `PASSWORD_RESET` token
+ * Create a `PASSWORD_RESET` token.
  */
 export const requestPasswordReset = appPublicProcedure
     .input(
@@ -24,10 +24,13 @@ export const requestPasswordReset = appPublicProcedure
                     id: true
                 }
             })
+
             if (!record) {
                 throw new ApiAccountNotFoundError()
             }
+
             const token = await prisma.token.createPasswordReset(record.id)
+
             await passwordResetMailer({
                 email: opts.input.email,
                 token

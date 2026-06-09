@@ -6,7 +6,7 @@ import { ApiEmailNotAvailableError } from 'src/server/common/api-errors'
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Register an account using email
+ * Register an account by email.
  */
 export const registerByEmail = appPublicProcedure
     .input(
@@ -24,10 +24,13 @@ export const registerByEmail = appPublicProcedure
                     email: opts.input.email
                 }
             })
+
             if (record) {
                 throw new ApiEmailNotAvailableError()
             }
+
             const user = await prisma.user.register(opts.input)
+
             await saveSession(opts.ctx.req, opts.ctx.res, user.id)
         })
     )

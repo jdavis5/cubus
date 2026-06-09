@@ -32,8 +32,8 @@ export const PasswordStrength = ({ password, dict }: PasswordStrengthProps) => {
                 data-strength={score}
                 title={scores[score]}
             >
-                {Array.from({ length: 4 }, (_, key) => (
-                    <div key={key} className={styles['strength-block']}></div>
+                {Array.from({ length: 4 }, (_element, index) => (
+                    <div key={index} className={styles['strength-block']}></div>
                 ))}
             </div>
         </div>

@@ -13,9 +13,12 @@ const buildEslintCommand = (filenames) =>
         .map((f) => path.relative(process.cwd(), f))
         .join(' --file ')}`
 
-const config = {
+/**
+ * @type {import('lint-staged/lib').Configuration}
+ */
+const lintStagedConfig = {
     '*.{js,jsx,ts,tsx}': [buildEslintCommand],
-    '*.{json,css,scss,md}': 'prettier --write'
+    '*': 'prettier --write --ignore-unknown'
 }
 
-export default config
+export default lintStagedConfig

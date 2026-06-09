@@ -1,5 +1,5 @@
 import React from 'react'
-import { ClientOnly } from 'src/common/components/client-only'
+import { usePageUrl } from 'src/common/hooks/page-url'
 
 type LinkItem = {
     pathname: string
@@ -15,21 +15,19 @@ export const LinkList = <T extends LinkItem>({
     items,
     renderItem
 }: LinkListProps<T>) => {
-    return (
-        <ClientOnly>
-            <LinkListItems items={items} renderItem={renderItem} />
-        </ClientOnly>
-    )
+    return <LinkListItems items={items} renderItem={renderItem} />
 }
 
 const LinkListItems = <T extends LinkItem>({
     items,
     renderItem
 }: LinkListProps<T>) => {
+    const { pathname } = usePageUrl()
+
     return (
         <>
             {items.map((item, index) => {
-                const isActive = window.location.pathname === item.pathname
+                const isActive = pathname === item.pathname
                 return (
                     <React.Fragment key={index}>
                         {renderItem(item, isActive)}

@@ -1,15 +1,14 @@
-ignoredBuiltDependencies:
-  - '@parcel/watcher'
-  - '@prisma/client'
-  - '@prisma/engines'
-  - '@scarf/scarf'
-  - '@tree-sitter-grammars/tree-sitter-yaml'
-  - core-js-pure
-  - esbuild
-  - prisma
-  - tree-sitter
-  - tree-sitter-json
-  - unrs-resolver
-
-onlyBuiltDependencies:
-  - bcrypt
+allowBuilds:
+  '@parcel/watcher': false
+  '@prisma/client': false
+  '@prisma/engines': false
+  '@scarf/scarf': false
+  '@tree-sitter-grammars/tree-sitter-yaml': false
+  bcrypt: true
+  core-js-pure: false
+  env-nextjs: true
+  esbuild: false
+  prisma: false
+  tree-sitter: false
+  tree-sitter-json: false
+  unrs-resolver: false

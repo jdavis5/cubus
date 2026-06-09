@@ -4,7 +4,7 @@ import { TokenOptions } from 'prisma/main/client'
 import { generateAccountActivationToken } from 'src/server/account-activation/account-activation.tokens'
 
 /**
- * Creates an `ACCOUNT_ACTIVATION` token for the user with given ID
+ * Creates an `ACCOUNT_ACTIVATION` token for the user with given ID.
  */
 export const createAccountActivation = async (userId: string) => {
     const value = generateAccountActivationToken()

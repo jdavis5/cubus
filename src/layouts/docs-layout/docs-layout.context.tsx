@@ -26,7 +26,7 @@ export const DocsLayoutProvider = ({ children }: DocsLayoutProviderProps) => {
 }
 
 /**
- * Returns the context for DocsLayout
+ * Returns the context for DocsLayout.
  */
 export const useDocsLayoutContext = () => {
     const context = React.useContext(DocsLayoutContext)

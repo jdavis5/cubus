@@ -12,7 +12,10 @@ export class ApiInternalProblem extends ApiProblemDetails {
             title: 'Something went wrong',
             detail:
                 options?.detail ??
-                'An internal error has occurred and your request could not be completed at this time. Please try again later.'
+                [
+                    'An internal error has occurred and your request could not be completed at this time.',
+                    'Please try again later.'
+                ].join(' ')
         })
     }
 }

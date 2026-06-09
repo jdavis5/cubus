@@ -1,7 +1,7 @@
 import { intlFormat, intlFormatDistance, isValid } from 'date-fns'
 
 /**
- * Creates a user-friendly stamp for the API key generatedAt
+ * Creates a user-friendly stamp for the API key `generatedAt`.
  */
 export const formatGeneratedAtDate = (value: Date) => {
     return isValid(value)
@@ -15,7 +15,7 @@ export const formatGeneratedAtDate = (value: Date) => {
 }
 
 /**
- * Creates a user-friendly stamp for the API key lastUsedAt
+ * Creates a user-friendly stamp for the API key `lastUsedAt`.
  */
 export const formatLastUsedAtDate = (value: Date | null) => {
     if (!value) {

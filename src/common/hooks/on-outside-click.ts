@@ -1,7 +1,7 @@
 import React from 'react'
 
 /**
- * Invokes the provided callback if a user clicks outside of the provided element
+ * Invokes the provided callback if a user clicks outside of the provided element.
  */
 export const useOnOutsideClick = <T extends HTMLElement = HTMLElement>(
     callback: () => void

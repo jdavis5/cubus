@@ -1,12 +1,12 @@
-import { createEnv } from './core/create-env'
-import envUtils from './core/schema-utils'
+import { createEnv } from 'env-nextjs'
+import { schemaUtils } from './schema-utils'
 
 const clientEnv = createEnv({
     context: 'client',
     schema: {
-        NEXT_PUBLIC_BASE_URL: envUtils.string.url()
+        NEXT_PUBLIC_BASE_URL: schemaUtils.string.url()
     },
-    runtime: {
+    clientRuntime: {
         NEXT_PUBLIC_BASE_URL: process.env['NEXT_PUBLIC_BASE_URL']
     }
 })

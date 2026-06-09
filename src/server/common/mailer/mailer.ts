@@ -19,13 +19,15 @@ type MailerOptions = {
 }
 
 /**
- * Sends an email with the provided options
+ * Sends an email with the provided options.
  */
 export const mailer = async (options: MailerOptions) => {
     const transporter = nodemailer.createTransport(config)
+
     const mailOptions = {
         from: `"Cubus" <${config.auth.user}>`,
         ...options
     }
+
     return transporter.sendMail(mailOptions)
 }

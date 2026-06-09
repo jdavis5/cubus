@@ -23,7 +23,7 @@ export const paginatedFindByFilters = async (
     }
 ) => {
     /**
-     * Creates an aggregation filter
+     * Creates an aggregation filter.
      */
     const createFilter = (filters: Filters) => {
         return {
@@ -43,7 +43,7 @@ export const paginatedFindByFilters = async (
     }
     // As Prisma does not support insensitive scalar queries,
     // a raw aggregation query must be used to retrieve a list of IDs
-    // that can be passed back into a Prisma query
+    // that can be passed back into a Prisma query.
     const rawResults = await prisma.theaters.aggregateRaw({
         pipeline: [
             {

@@ -6,7 +6,7 @@ import { ApiAccountNotFoundError } from 'src/server/common/api-errors'
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Identifies an authentication method for a user
+ * Identifies an authentication method for a user.
  */
 export const identifyUser = appPublicProcedure
     .input(
@@ -25,9 +25,11 @@ export const identifyUser = appPublicProcedure
                     accountType: true
                 }
             })
+
             if (!record) {
                 throw new ApiAccountNotFoundError()
             }
+
             return {
                 method: getAuthMethod(record.accountType)
             }

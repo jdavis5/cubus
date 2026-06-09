@@ -18,7 +18,7 @@ const sessionCookieAttributes = {
 } as const satisfies CookieAttributes
 
 /**
- * Creates a serialized deleted session cookie
+ * Creates a serialised deleted session cookie.
  */
 export const serializeDeletedSession = () => {
     return serialize(sessionCookieAttributes.name, '', {
@@ -28,7 +28,7 @@ export const serializeDeletedSession = () => {
 }
 
 /**
- * Creates a serialized session cookie using the given value
+ * Creates a serialised session cookie using the given value.
  */
 export const serializeSession = (value: string) => {
     return serialize(
@@ -39,7 +39,7 @@ export const serializeSession = (value: string) => {
 }
 
 /**
- * Retrieves the value of the session cookie from a passed object
+ * Retrieves the value of the session cookie from a passed object.
  */
 export const getSessionFromCookies = (cookies: NextApiRequest['cookies']) => {
     return cookies[sessionCookieAttributes.name] ?? null

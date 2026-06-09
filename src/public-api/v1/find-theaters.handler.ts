@@ -28,7 +28,14 @@ const querySchema = z.object({
             z
                 .string()
                 .regex(
-                    /^(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)$/i,
+                    new RegExp(
+                        '^(' +
+                            'AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|' +
+                            'HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|' + 
+                            'MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|' + 
+                            'NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|' + 
+                            'SD|TN|TX|UT|VT|VA|WA|WV|WI|WY' +
+                        ')$', 'i'),
                     {
                         message: 'Must be a valid two letter state abbreviation'
                     }
@@ -39,7 +46,7 @@ const querySchema = z.object({
 })
 
 /**
- * Finds a list of theaters that matching the provided filters
+ * Finds a list of theaters that matching the provided filters.
  *
  * @openapi
  * /theaters:

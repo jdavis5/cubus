@@ -5,7 +5,7 @@ import { z } from 'zod'
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Update the user profile
+ * Update the user profile.
  */
 export const updateProfile = appProtectedProcedure
     .input(

@@ -6,7 +6,7 @@ import { emailUpdateMailer } from 'src/server/email-update/email-update.mailer'
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Create an `EMAIL_UPDATE` token
+ * Create an `EMAIL_UPDATE` token.
  */
 export const requestEmailUpdate = appProtectedProcedure
     .input(
@@ -24,6 +24,7 @@ export const requestEmailUpdate = appProtectedProcedure
             if (record) {
                 throw new ApiEmailNotAvailableError()
             }
+
             await prisma.user.update({
                 where: {
                     id: opts.ctx.session.user.id
@@ -32,9 +33,11 @@ export const requestEmailUpdate = appProtectedProcedure
                     unconfirmedEmail: opts.input.newEmail
                 }
             })
+
             const token = await prisma.token.createEmailUpdate(
                 opts.ctx.session.user.id
             )
+
             await emailUpdateMailer({
                 email: opts.input.newEmail,
                 token

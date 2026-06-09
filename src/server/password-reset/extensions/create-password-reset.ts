@@ -4,10 +4,11 @@ import { TokenOptions } from 'prisma/main/client'
 import { generatePasswordResetToken } from 'src/server/password-reset/password-reset.tokens'
 
 /**
- * Creates an `PASSWORD_RESET` token for the user with given ID
+ * Creates an `PASSWORD_RESET` token for the user with given ID.
  */
 export const createPasswordReset = async (userId: string) => {
     const value = generatePasswordResetToken()
+
     await prisma.token.create({
         data: {
             userId,
@@ -16,5 +17,6 @@ export const createPasswordReset = async (userId: string) => {
             expiresAt: addSeconds(new Date(), 60 * 10)
         }
     })
+
     return value
 }

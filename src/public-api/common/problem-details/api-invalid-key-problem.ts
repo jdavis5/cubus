@@ -12,8 +12,10 @@ export class ApiInvalidKeyProblem extends ApiProblemDetails {
             title: 'The API key is not valid',
             detail:
                 options?.detail ??
-                `In order to access this resource you must provide a valid API key. ` +
+                [
+                    'In order to access this resource you must provide a valid API key.',
                     'Please activate the required key or generate a new key from your account.'
+                ].join(' ')
         })
     }
 }

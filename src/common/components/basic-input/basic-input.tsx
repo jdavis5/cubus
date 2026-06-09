@@ -16,5 +16,5 @@ export const BasicInput = React.forwardRef<HTMLInputElement, BasicInputProps>(
     }
 )
 
-// Updates the displayName after using forwardRef
+// Updates the displayName after using forwardRef.
 BasicInput.displayName = 'BasicInput'

@@ -2,7 +2,7 @@ import { AccountOptions } from 'prisma/main/client'
 import { z } from 'zod'
 
 /**
- * Available options for authenticating
+ * Available options for authenticating.
  */
 const authOptions = {
     PASSWORD: 'password'
@@ -13,7 +13,7 @@ const authOptionsSchema = z.nativeEnum(authOptions)
 export type AuthOptions = z.infer<typeof authOptionsSchema>
 
 /**
- * Get the Authentication method for a given option
+ * Get the Authentication method for a given option.
  */
 export const getAuthMethod = (option: AccountOptions): AuthOptions => {
     let authMethod: AuthOptions

@@ -10,7 +10,7 @@ type RegisterArgs = {
 }
 
 /**
- * Registers a new user with the provided information with a default plan
+ * Registers a new user with the provided information with a default plan.
  */
 export const register = async (data: RegisterArgs) => {
     return prisma.user.create({

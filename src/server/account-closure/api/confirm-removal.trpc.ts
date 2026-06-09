@@ -9,7 +9,7 @@ import { compareHash } from 'src/server/common/hashing'
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Remove a user account
+ * Remove a user account.
  */
 export const confirmRemoval = appProtectedProcedure
     .input(

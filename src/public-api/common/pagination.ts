@@ -12,7 +12,7 @@ type PaginateArgs<T = any> = {
 }
 
 /**
- * Creates a pagination object
+ * Creates a pagination object.
  */
 export const paginate = <T>(args: PaginateArgs<T>) => {
     invariant(

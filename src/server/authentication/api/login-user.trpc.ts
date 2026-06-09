@@ -10,7 +10,7 @@ import { compareHash } from 'src/server/common/hashing'
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Log a user in
+ * Logs in a user.
  */
 export const loginUser = appPublicProcedure
     .input(
@@ -33,6 +33,7 @@ export const loginUser = appPublicProcedure
             if (!record) {
                 throw new ApiInternalError()
             }
+
             const isMatch = await compareHash(
                 opts.input.password,
                 record.password
@@ -40,6 +41,7 @@ export const loginUser = appPublicProcedure
             if (!isMatch) {
                 throw new ApiIncorrectPasswordError()
             }
+
             await saveSession(opts.ctx.req, opts.ctx.res, record.id)
         })
     )

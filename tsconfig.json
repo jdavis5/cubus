@@ -37,5 +37,5 @@
         "**/*.jsx",
         "prisma/clients.d.ts"
     ],
-    "exclude": ["node_modules", "prisma/*/.generated"]
+    "exclude": ["node_modules", "**/generated/"]
 }

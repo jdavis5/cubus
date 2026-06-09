@@ -12,11 +12,11 @@
 }
 
 .content main {
-    padding: 0 1em 1em 0;
+    padding: 1em 1em 6em 0;
 }
 
 @include breakpoints.select('lg') {
     .content main {
-        padding: 1em;
+        padding-left: 1em;
     }
 }

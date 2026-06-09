@@ -2,7 +2,7 @@ import { destroySession } from 'src/server/authentication/api/destroy-session.he
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Logs out a user
+ * Logs out a user.
  */
 export const logoutUser = appProtectedProcedure.mutation((opts) =>
     procedureResult(async () => {

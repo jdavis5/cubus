@@ -32,6 +32,7 @@ export const procedureResult = async <T>(
 ): Promise<ProcedureResult<T>> => {
     try {
         const result = await fn()
+
         return {
             status: 'success',
             data: result
@@ -41,6 +42,7 @@ export const procedureResult = async <T>(
             if (error instanceof ApiInternalError) {
                 throw error
             }
+
             return {
                 status: 'error',
                 error: {
@@ -49,6 +51,11 @@ export const procedureResult = async <T>(
                 }
             }
         }
+
+        if (error instanceof Error) {
+            console.error(error.message)
+        }
+
         throw new ApiInternalError()
     }
 }

@@ -7,7 +7,7 @@ type GenerateArgs = {
 }
 
 /**
- * Generates an API key for the provided user
+ * Generates an API key for the provided user.
  */
 export const generate = async (data: GenerateArgs) => {
     const unsignedKey = generateApiKey()

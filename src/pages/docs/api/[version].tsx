@@ -6,7 +6,6 @@ import {
     type InferGetServerSidePropsType
 } from 'next'
 import { z } from 'zod'
-import { ClientOnly } from 'src/common/components/client-only'
 import { Container } from 'src/common/components/container'
 import { Section } from 'src/common/components/section'
 import { type PageComponent, pageTitle } from 'src/common/page'
@@ -49,13 +48,11 @@ const DocsApiVersionPage: PageComponent<DocsApiVersionPageProps> = ({
                 />
                 <meta name="keywords" content="some keywords" />
             </Head>
-            <ClientOnly>
-                <Container>
-                    <Section>
-                        <SpecViewer url={specPath} />
-                    </Section>
-                </Container>
-            </ClientOnly>
+            <Container>
+                <Section>
+                    <SpecViewer url={specPath} />
+                </Section>
+            </Container>
         </>
     )
 }

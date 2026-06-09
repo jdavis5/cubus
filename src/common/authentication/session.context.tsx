@@ -9,7 +9,7 @@ type SessionProviderProps = React.PropsWithChildren<{
 }>
 
 /**
- * Provider for the application session context
+ * Provider for the application session context.
  */
 export const SessionProvider = ({
     children,
@@ -23,7 +23,7 @@ export const SessionProvider = ({
 }
 
 /**
- * Returns the application session context
+ * Returns the application session context.
  */
 export const useSessionContext = () => {
     const context = React.useContext(SessionContext)

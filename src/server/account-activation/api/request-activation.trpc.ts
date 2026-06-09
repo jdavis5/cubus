@@ -4,7 +4,7 @@ import { ApiInternalError } from 'src/server/common/api-errors'
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Create an `ACCOUNT_ACTIVATION` token
+ * Create an `ACCOUNT_ACTIVATION` token.
  */
 export const requestActivation = appProtectedProcedure.mutation((opts) =>
     procedureResult(async () => {

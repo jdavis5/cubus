@@ -8,14 +8,14 @@ const tokenAlgorithm = 'sha256'
 const tokenEncoding = 'hex'
 
 /**
- * Generates a new API key token
+ * Generates a new API key token.
  */
 export const generateApiKey = () => {
     return generateToken(tokenLength, tokenEncoding)
 }
 
 /**
- * Signs the API key token
+ * Signs the API key token.
  */
 export const signApiKey = (value: string) => {
     return crypto.createHash(tokenAlgorithm).update(value).digest(tokenEncoding)

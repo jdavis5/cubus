@@ -6,7 +6,7 @@ import { generateHash } from 'src/server/common/hashing'
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Submit a `PASSWORD_RESET` token
+ * Submit a `PASSWORD_RESET` token.
  */
 export const submitPasswordReset = appPublicProcedure
     .input(
@@ -24,6 +24,7 @@ export const submitPasswordReset = appPublicProcedure
             if (!summary || summary.userId !== opts.input.userId) {
                 throw new ApiTokenExpiredError()
             }
+
             await prisma.user.update({
                 where: {
                     id: summary.userId
@@ -32,6 +33,7 @@ export const submitPasswordReset = appPublicProcedure
                     password: await generateHash(opts.input.newPassword)
                 }
             })
+
             await prisma.token.removePasswordReset(summary.userId)
         })
     )

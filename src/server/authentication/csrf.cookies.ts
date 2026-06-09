@@ -26,7 +26,7 @@ const csrfTransportCookieAttributes = {
 } as const satisfies CookieAttributes
 
 /**
- * Creates a serialized string of values for the CSRF cookie
+ * Creates a serialised string of values for the CSRF cookie.
  */
 export const serializeCsrf = (token: string) => {
     return serialize(
@@ -37,7 +37,7 @@ export const serializeCsrf = (token: string) => {
 }
 
 /**
- * Creates a serialized string of values for the CSRF transport cookie
+ * Creates a serialised string of values for the CSRF transport cookie.
  */
 export const serializeCsrfTransport = (token: string) => {
     return serialize(
@@ -48,7 +48,7 @@ export const serializeCsrfTransport = (token: string) => {
 }
 
 /**
- * Retrieves the value from the CSRF transport cookie via document
+ * Retrieves the value from the CSRF transport cookie via document.
  */
 export const getCsrfTransportDocumentCookie = () => {
     if (typeof window !== 'undefined') {
@@ -58,7 +58,7 @@ export const getCsrfTransportDocumentCookie = () => {
 }
 
 /**
- * Retrieves the value from the CSRF cookie via request
+ * Retrieves the value from the CSRF cookie via request.
  */
 export const csrfCookie = (cookies: NextApiRequest['cookies']) => {
     return cookies?.[csrfCookieAttributes.name] ?? null

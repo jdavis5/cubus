@@ -12,5 +12,5 @@
             }
         }
     ],
-    "ignorePatterns": ["prisma/**/.generated"]
+    "ignorePatterns": ["prisma/**/generated"]
 }

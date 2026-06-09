@@ -16,10 +16,10 @@ const FormElement = React.forwardRef<HTMLFormElement, FormProps>(
     }
 )
 
-// Updates the displayName after using forwardRef
+// Updates the displayName after using forwardRef.
 FormElement.displayName = 'Form'
 
-// Create a compound component without errors
+// Create a compound component.
 export const Form = Object.assign({}, FormElement, {
     Col: FormCol,
     Interaction: FormInteraction,

@@ -4,10 +4,11 @@ import { TokenOptions } from 'prisma/main/client'
 import { generateEmailUpdateToken } from 'src/server/email-update/email-update.tokens'
 
 /**
- * Creates an `EMAIL_UPDATE` token for the user with given ID
+ * Creates an `EMAIL_UPDATE` token for the user with given ID.
  */
 export const createEmailUpdate = async (userId: string) => {
     const value = generateEmailUpdateToken()
+
     await prisma.token.create({
         data: {
             userId,
@@ -16,5 +17,6 @@ export const createEmailUpdate = async (userId: string) => {
             expiresAt: addSeconds(new Date(), 60 * 30)
         }
     })
+
     return value
 }

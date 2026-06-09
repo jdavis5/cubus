@@ -9,7 +9,7 @@ import {
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Generate a new API key
+ * Generate a new API key.
  */
 export const generateKey = appProtectedProcedure
     .input(

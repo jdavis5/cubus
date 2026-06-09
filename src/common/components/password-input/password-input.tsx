@@ -81,5 +81,5 @@ export const PasswordInput = React.forwardRef<
     }
 )
 
-// Updates the displayName after using forwardRef
+// Updates the displayName after using forwardRef.
 PasswordInput.displayName = 'PasswordInput'

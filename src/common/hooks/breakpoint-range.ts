@@ -2,7 +2,7 @@ import breakpoints from 'src/common/styles/variables/exports/breakpoints.module.
 import { useMediaQuery } from 'src/common/hooks/media-query'
 
 /**
- * Returns the status of the browser being within a named breakpoint range
+ * Returns the status of the browser being within a named breakpoint range.
  */
 export const useBreakpointRange = (
     range: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'

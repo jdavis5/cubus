@@ -9,7 +9,7 @@ import {
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Toggle an API key on/off
+ * Toggle an API key on and off.
  */
 export const toggleKey = appProtectedProcedure
     .input(
@@ -40,7 +40,7 @@ export const toggleKey = appProtectedProcedure
                 previewMap.set(opts.input.id, opts.input.isEnabled)
                 const previewEntries = Array.from(previewMap)
                 if (
-                    previewEntries.filter(([_, value]) => value).length >
+                    previewEntries.filter(([_key, value]) => value).length >
                     summary.plan.limit
                 ) {
                     throw new ApiKeyLimitError()

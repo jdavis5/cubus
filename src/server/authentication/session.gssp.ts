@@ -43,47 +43,53 @@ type GSSPWithSession<
 ) => Promise<GetServerSidePropsResult<Props>>
 
 /**
- * Refreshes the CSRF token and cookies
+ * Refreshes the CSRF token and cookies.
  */
 const withCsrfRefresh = <Props extends { [K: string]: any }>(
     gsspCb: GetServerSideProps<Props>
 ) => {
     return async (context: GetServerSidePropsContext) => {
         const csrf = generateCsrfToken()
+
         context.res.setHeader('Set-Cookie', [
             serializeCsrf(csrf),
             serializeCsrfTransport(signCsrfToken(csrf))
         ])
+
         return gsspCb(context)
     }
 }
 
 /**
- * Attaches a session to the context
+ * Attaches a session to the context.
  */
 const withSessionContext = <Props extends { [K: string]: any }>(
     gsspCb: GSSPWithSession<'app', Props>
 ) => {
     return withCsrfRefresh(async (context) => {
         const sessionId = getSessionFromCookies(context.req.cookies)
+
         const user = sessionId
             ? await prisma.token.findValidSession(sessionId)
             : null
+
         const appSession = {
             user
         } satisfies Session
+
         const extendedContext: GSSPSessionContext<'app'> = Object.assign(
             {},
             context,
             { req: { ...context.req, session: appSession } }
         )
+
         return gsspCb(extendedContext)
     })
 }
 
 /**
  * A `getServerSideProps` implementation without a callback that attaches
- * a session to the returned props
+ * a session to the returned props.
  */
 export const withSession = () => {
     return withSessionContext(async (context) => {
@@ -97,13 +103,14 @@ export const withSession = () => {
 
 /**
  * A `getServerSideProps` implementation that expects a callback and attaches
- * a session to the returned props
+ * a session to the returned props.
  */
 export const withSessionCallback = <Props extends { [K: string]: any }>(
     gsspCb: GSSPWithSession<'app', Props>
 ) => {
     return withSessionContext(async (context) => {
         const result = await gsspCb(context)
+
         if ('props' in result) {
             const currentProps = await result.props
             return {
@@ -113,12 +120,13 @@ export const withSessionCallback = <Props extends { [K: string]: any }>(
                 } satisfies GSSPSessionProps
             }
         }
+
         return result
     })
 }
 
 /**
- * A type guard that narrows the context if a session can be authenticated
+ * A type guard that narrows the context if a session can be authenticated.
  */
 const isAuthenticatedSessionContext = (
     context: GSSPSessionContext<'app'>
@@ -127,7 +135,7 @@ const isAuthenticatedSessionContext = (
 }
 
 /**
- * Attaches an authenticated session to the context
+ * Attaches an authenticated session to the context.
  */
 const withAuthSessionContext = <Props extends { [K: string]: any }>(
     gsspCb: GSSPWithSession<'authenticated', Props>
@@ -141,13 +149,14 @@ const withAuthSessionContext = <Props extends { [K: string]: any }>(
                 }
             }
         }
+
         return gsspCb(context)
     })
 }
 
 /**
  * A `getServerSideProps` implementation without a callback and attaches
- * an authenticated session to the returned props
+ * an authenticated session to the returned props.
  */
 export const withAuthenticatedSession = () => {
     return withAuthSessionContext(async (context) => {
@@ -161,7 +170,7 @@ export const withAuthenticatedSession = () => {
 
 /**
  * A `getServerSideProps` implementation that expects a callback and attaches
- * an authenticated session to the returned props
+ * an authenticated session to the returned props.
  */
 export const withAuthenticatedSessionCallback = <
     Props extends { [K: string]: any }
@@ -170,6 +179,7 @@ export const withAuthenticatedSessionCallback = <
 ) => {
     return withAuthSessionContext(async (context) => {
         const result = await gsspCb(context)
+
         if ('props' in result) {
             const currentProps = await result.props
             return {
@@ -179,6 +189,7 @@ export const withAuthenticatedSessionCallback = <
                 } satisfies GSSPSessionProps
             }
         }
+
         return result
     })
 }

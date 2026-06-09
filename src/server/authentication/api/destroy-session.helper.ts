@@ -6,15 +6,17 @@ import {
 } from 'src/server/authentication/session.cookies'
 
 /**
- * Destroys the session
+ * Destroys the session.
  */
 export const destroySession = async (
     req: NextApiRequest,
     res: NextApiResponse
 ) => {
     const token = getSessionFromCookies(req.cookies)
+
     if (token) {
         await prisma.token.deleteSession(token)
     }
+
     res.setHeader('Set-Cookie', serializeDeletedSession())
 }

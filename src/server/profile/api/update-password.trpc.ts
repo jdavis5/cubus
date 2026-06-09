@@ -10,7 +10,7 @@ import { compareHash, generateHash } from 'src/server/common/hashing'
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Update the user password
+ * Update the user password.
  */
 export const updatePassword = appProtectedProcedure
     .input(
@@ -33,6 +33,7 @@ export const updatePassword = appProtectedProcedure
             if (!record) {
                 throw new ApiInternalError()
             }
+
             const isMatch = await compareHash(
                 opts.input.password,
                 record.password
@@ -40,6 +41,7 @@ export const updatePassword = appProtectedProcedure
             if (!isMatch) {
                 throw new ApiIncorrectPasswordError()
             }
+
             await prisma.user.update({
                 where: {
                     id: record.id
@@ -48,6 +50,7 @@ export const updatePassword = appProtectedProcedure
                     password: await generateHash(opts.input.newPassword)
                 }
             })
+
             await destroySession(opts.ctx.req, opts.ctx.res)
         })
     )

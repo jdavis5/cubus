@@ -1,7 +1,7 @@
 import prisma from 'prisma/main'
 
 /**
- * Finds a list of available plans
+ * Finds a list of available plans.
  */
 export const listAvailable = () => {
     return prisma.plan.findMany({

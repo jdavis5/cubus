@@ -1,6 +1,7 @@
 import prisma from 'prisma/main'
 import { ApiKeySchema, PlanOptionsSchema } from 'prisma/main/schemas'
 import { z } from 'zod'
+import { invariant } from 'src/common/invariant'
 import {
     ApiAccessUnauthorizedError,
     ApiInternalError,
@@ -9,7 +10,7 @@ import {
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
- * Modify a subscription by changing the plan option and updating keys
+ * Modify a subscription by changing the plan option and updating keys.
  */
 export const modify = appProtectedProcedure
     .input(
@@ -31,18 +32,21 @@ export const modify = appProtectedProcedure
             if (!availablePlan) {
                 throw new ApiInternalError()
             }
+
             const summary = await prisma.user.createSubscriptionSummary(
                 opts.ctx.session.user.id
             )
             if (!summary) {
                 throw new ApiInternalError()
             }
+
             const isOwned = opts.input.keys.every((inputKey) =>
                 summary.apiKeys.find((ownedKey) => ownedKey.id === inputKey.id)
             )
             if (!isOwned) {
                 throw new ApiAccessUnauthorizedError()
             }
+
             const previewMap = new Map()
             summary.apiKeys.forEach(({ id, isEnabled }) => {
                 previewMap.set(id, isEnabled)
@@ -50,13 +54,15 @@ export const modify = appProtectedProcedure
             opts.input.keys.forEach(({ id, isEnabled }) => {
                 previewMap.set(id, isEnabled)
             })
+
             const previewEntries = Array.from(previewMap)
             if (
-                previewEntries.filter(([_, value]) => value).length >
+                previewEntries.filter(([_key, value]) => value).length >
                 summary.plan.limit
             ) {
                 throw new ApiKeyLimitError()
             }
+
             const record = await prisma.user.update({
                 where: {
                     id: summary.userId
@@ -92,11 +98,17 @@ export const modify = appProtectedProcedure
                     apiKeys: true
                 }
             })
+
+            // After the update query subscription must be non-null.
+            invariant(
+                record.subscription,
+                'Expected subscription to be non-null'
+            )
+
             return {
                 userId: record.id,
                 apiKeys: record.apiKeys,
-                // Assert non-null properties
-                plan: record.subscription!.plan
+                plan: record.subscription.plan
             }
         })
     )

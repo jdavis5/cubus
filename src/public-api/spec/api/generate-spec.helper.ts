@@ -8,7 +8,7 @@ import { ApiInternalError } from 'src/server/common/api-errors'
 
 /**
  * Generates a JSON specification for the request URL's API version,
- * and attaches cache-control headers
+ * and attaches cache-control headers.
  */
 export const generateSpec = async (
     req: NextApiRequest,
@@ -32,7 +32,7 @@ export const generateSpec = async (
         throwOnErrors: true,
         definition: JSON.parse(fileContents),
         // Files using OpenAPI comment definitions need to be included in next.config.js
-        // using `outputFileTracingIncludes` to ensure they are included in the build output
+        // using `outputFileTracingIncludes` to ensure they are included in the build output.
         apis: [
             `${basePath}/${version}/*.handler.ts`,
             `${basePath}/**/*.schemas.ts`

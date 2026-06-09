@@ -28,8 +28,9 @@ const isHandlerHttpMethod = (method: unknown): method is HandlerHttpMethod => {
 }
 
 /**
- * The Next `API` route handler for the public API
- * Error responses fit the Problem Details specification for HTTP APIs
+ * The Next `API` route handler for the public API.
+ * 
+ * Error responses fit the Problem Details specification for HTTP APIs.
  *
  * {@link https://www.rfc-editor.org/rfc/rfc9457}
  */

@@ -9,8 +9,10 @@ type ApiProblemDetailsOptions = {
 }
 
 /**
- * An implementation of the Problem Details specification for HTTP APIs  \
- * {@link https://www.rfc-editor.org/rfc/rfc9457}  \
+ * An implementation of the Problem Details specification for HTTP APIs.  
+ * 
+ * {@link https://www.rfc-editor.org/rfc/rfc9457}
+ * 
  * This base class covers the core members of a Problem Details object to be inherited by a concrete class.
  */
 export abstract class ApiProblemDetails implements ProblemDetails {

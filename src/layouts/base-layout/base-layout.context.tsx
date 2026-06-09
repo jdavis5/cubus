@@ -26,7 +26,7 @@ export const BaseProvider = ({ children }: BaseLayoutProviderProps) => {
 }
 
 /**
- * Returns the context for BaseLayout
+ * Returns the context for BaseLayout.
  */
 export const useBaseLayoutContext = () => {
     const context = React.useContext(BaseLayoutContext)

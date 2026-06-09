@@ -4,10 +4,11 @@ import prisma from 'prisma/main'
 import { TokenOptions } from 'prisma/main/client'
 
 /**
- * Creates a new `SESSION` token for the provided user ID
+ * Creates a new `SESSION` token for the provided user ID.
  */
 export const createSession = async (userId: string) => {
     const value = nanoid()
+
     await prisma.$transaction([
         prisma.token.create({
             data: {
@@ -26,5 +27,6 @@ export const createSession = async (userId: string) => {
             }
         })
     ])
+
     return value
 }
