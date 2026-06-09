@@ -1,8 +1,5 @@
 # Cubus
 
-> [!NOTE]  
-> This project was originally developed during 2024–2025 and is not under active development.
-
 - [Introduction](#introduction)
 - [Features](#features)
 - [Security notice](#security-notice)
@@ -14,6 +11,9 @@
 - [Advanced topics](#advanced-topics)
 
 ## Introduction
+
+> [!NOTE]  
+> This project was originally developed during 2024–2025 and is not under active development.
 
 Cubus is a full-stack SaaS application providing user account management, API key generation, and tiered access control based on subscription level, with a documented RESTful API secured via API key authentication.
 
