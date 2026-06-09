@@ -1,11 +1,12 @@
 generator client {
     provider    = "prisma-client-js"
-    output      = "generated/client"
+    output      = "./generated/client"
 }
 
 generator zod {
     provider                = "zod-prisma-types"
-    output                  = "generated/zod"
+    output                  = "./generated/zod"
+    prismaClientPath        = "../client"
     createInputTypes        = false
     addInputTypeValidation  = false
 }
