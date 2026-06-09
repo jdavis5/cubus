@@ -40,7 +40,7 @@ Authentication is handled with custom logic, avoiding third-party libraries to m
 
 ### Technical features
 
-- Build-time validation and type-safe environment variables using the custom [env-nextjs](https://github.com/jdavis5/env-nextjs) library
+- Build-time validation and type-safe environment variables provided by the custom library [env-nextjs](https://github.com/jdavis5/env-nextjs)
 - Session-based authentication
 - Cross-Site Request Forgery (CSRF) protection using the double-submit cookie pattern
 - Multiple Prisma clients utilising [custom extensions](https://www.prisma.io/docs/orm/prisma-client/client-extensions)
@@ -134,12 +134,10 @@ Related:
 
 ## Dependencies overview
 
-A list of dependencies added to the project can be found below.
-
 ### `dependencies`
 
 | Package | Description |
-| --- | --- | --- |
+| :-- | :-- |
 | [@hookform/resolvers](https://react-hook-form.com/) | Validation resolvers for React Hook Form |
 | [@tanstack/react-query](https://tanstack.com/query/v4/docs/react/adapters/react-query) | Data fetching, caching and synchronisation |
 | [@trpc/client](https://trpc.io/) | tRPC client for server communication |
@@ -147,7 +145,7 @@ A list of dependencies added to the project can be found below.
 | [@trpc/react-query](https://trpc.io/) | React Query integration for tRPC |
 | [@trpc/server](https://trpc.io/) | tRPC routers and server integration |
 | [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme) | Password hashing |
-| [clsx](https://github.com/lukeed/clsx#readme) | Conditional className construction | # |
+| [clsx](https://github.com/lukeed/clsx#readme) | Conditional className construction |
 | [cookie](https://github.com/jshttp/cookie#readme) | HTTP cookie parsing and serialization |
 | [date-fns](https://date-fns.org/) | Date manipulation and formatting |
 | [jiti](https://github.com/unjs/jiti#readme) | Node.js loader for TypeScript and ECMAScript modules with extensionless imports |
@@ -188,7 +186,7 @@ A list of dependencies added to the project can be found below.
 
 ### Validation of environment variables
 
-This project integrates the custom [env-nextjs](https://github.com/jdavis5/env-nextjs) library to provide build-time validation of environment variables.
+This project uses the custom library [env-nextjs](https://github.com/jdavis5/env-nextjs) to validate environment variables at build-time.
 
 ### Overview of environment variables
 
