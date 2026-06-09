@@ -1,5 +1,8 @@
 # Cubus
 
+> [!NOTE]  
+> This project was originally developed during 2024–2025 and is not under active development.
+
 - [Introduction](#introduction)
 - [Features](#features)
 - [Security notice](#security-notice)
@@ -17,9 +20,6 @@ Cubus is a full-stack SaaS application providing user account management, API ke
 This project is a responsive web application built with [React](https://react.dev/) and the [Next.js](https://nextjs.org/) framework, running on [Node.js](https://nodejs.org/). It is strongly typed throughout with [TypeScript](https://www.typescriptlang.org/), and uses [tRPC](https://trpc.io/) and [Prisma ORM](https://www.prisma.io/orm) to provide end-to-end type safety, including database interactions with [MongoDB](https://www.mongodb.com/). User input and [environment variables at build time](#build-time-validation) are validated using [Zod](https://zod.dev/). The public API is documented according to the [OpenAPI OAS3](https://swagger.io/specification/v3/) standard, and its error handling complies with [RFC 9457 - Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457).
 
 Authentication is handled with custom logic, avoiding third-party libraries to make architectural and design decisions more visible. External UI libraries are also excluded in favour of CSS Modules and Sass utilities, which provide scoped, modular, and maintainable styles.
-
-> [!NOTE]  
-> This project was originally developed during 2024–2025 and is not under active development.
 
 ## Features
 
@@ -42,7 +42,7 @@ Authentication is handled with custom logic, avoiding third-party libraries to m
 
 - Session-based authentication
 - Cross-Site Request Forgery (CSRF) protection using the double-submit cookie pattern
-- [Validation and type safety for Next.js environment variables](#validation-of-environment-variables) 
+- [Validation and type safety for Next.js environment variables](#validation-of-environment-variables)
 - Multiple Prisma clients utilising [custom extensions](https://www.prisma.io/docs/orm/prisma-client/client-extensions)
 - Zod schemas [generated](https://www.prisma.io/docs/orm/prisma-schema/overview/generators) from [comment enhanced](https://www.prisma.io/docs/orm/prisma-schema/overview#comments) Prisma models
 - A type-safe end-to-end internal API combining tRPC with Zod
@@ -174,7 +174,7 @@ A list of dependencies added to the project can be found below.
 | [babel-plugin-superjson-next](https://github.com/blitz-js/babel-plugin-superjson-next#readme) | SuperJSON integration for Next.js pages |
 | [dotenv-cli](https://github.com/entropitor/dotenv-cli#readme) | Environment variable loading for CLI commands |
 | [env-nextjs](https://github.com/jdavis5/env-nextjs) | Validation and type safety for Next.js environment variables |
- | [eslint](https://eslint.org/) | Code analysis for JavaScript and TypeScript |
+| [eslint](https://eslint.org/) | Code analysis for JavaScript and TypeScript |
 | [eslint-config-next](https://nextjs.org/docs/app/building-your-application/configuring/eslint#eslint-config) | Default Next.js ESLint configuration |
 | [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier#readme) | ESLint configuration to disable Prettier conflicts |
 | [husky](https://github.com/typicode/husky#readme) | Git hook management |
