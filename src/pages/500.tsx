@@ -14,11 +14,7 @@ const ServerErrorPage: PageComponent = () => {
         <>
             <Head>
                 <title>{pageTitle('Something went wrong')}</title>
-                <meta
-                    name="description"
-                    content="The URL does not exist on this server"
-                />
-                <meta name="keywords" content="not found" />
+                <meta name="description" content="Something went wrong" />
             </Head>
             <Container>
                 <Section>

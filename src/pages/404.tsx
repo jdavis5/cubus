@@ -13,10 +13,7 @@ const NotFoundErrorPage: PageComponent = () => {
         <>
             <Head>
                 <title>{pageTitle('Page not found')}</title>
-                <meta
-                    name="description"
-                    content="The URL does not exist on this server"
-                />
+                <meta name="description" content="Page not found" />
                 <meta name="keywords" content="not found" />
             </Head>
             <Container>
