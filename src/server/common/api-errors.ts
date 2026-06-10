@@ -25,13 +25,13 @@ export class ApiAccessUnauthorizedError extends ApiError {
     }
 }
 
-export class ApiAccountNotFoundError extends ApiError {
+export class ApiEmailNotFoundError extends ApiError {
     static {
         this.prototype.name = this.name
     }
 
     constructor(
-        message: string = 'Could not find that account',
+        message: string = 'Could not find an account linked with this email address',
         options?: ApiErrorOptions
     ) {
         super(message, options)
@@ -44,7 +44,7 @@ export class ApiEmailNotAvailableError extends ApiError {
     }
 
     constructor(
-        message: string = 'An account is already registered to this email',
+        message: string = 'An account is already registered to this email address',
         options?: ApiErrorOptions
     ) {
         super(message, options)

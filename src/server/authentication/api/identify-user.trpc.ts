@@ -2,7 +2,7 @@ import prisma from 'prisma/main'
 import { UserSchema } from 'prisma/main/schemas'
 import { z } from 'zod'
 import { getAuthMethod } from 'src/common/authentication/auth-options'
-import { ApiAccountNotFoundError } from 'src/server/common/api-errors'
+import { ApiEmailNotFoundError } from 'src/server/common/api-errors'
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
 /**
@@ -27,7 +27,7 @@ export const identifyUser = appPublicProcedure
             })
 
             if (!record) {
-                throw new ApiAccountNotFoundError()
+                throw new ApiEmailNotFoundError()
             }
 
             return {

@@ -1,7 +1,7 @@
 import prisma from 'prisma/main'
 import { UserSchema } from 'prisma/main/schemas'
 import { z } from 'zod'
-import { ApiAccountNotFoundError } from 'src/server/common/api-errors'
+import { ApiEmailNotFoundError } from 'src/server/common/api-errors'
 import { passwordResetMailer } from 'src/server/password-reset/password-reset.mailer'
 import { appPublicProcedure, procedureResult } from 'src/server/trpc.app'
 
@@ -26,7 +26,7 @@ export const requestPasswordReset = appPublicProcedure
             })
 
             if (!record) {
-                throw new ApiAccountNotFoundError()
+                throw new ApiEmailNotFoundError()
             }
 
             const token = await prisma.token.createPasswordReset(record.id)
