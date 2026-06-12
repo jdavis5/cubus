@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './minimal-layout.module.scss'
 import React from 'react'
 import Head from 'next/head'
 import { MinimalFooter } from './minimal-footer'

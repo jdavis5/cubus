@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './docs-header.module.scss'
 import React from 'react'
 import { LinkButton } from 'src/common/components/link-button'
 import { LinkLogo } from 'src/common/components/link-logo'

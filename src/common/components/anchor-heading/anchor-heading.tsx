@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './anchor-heading.module.scss'
 import { FaLink } from 'react-icons/fa'
 import { Heading } from 'src/common/components/heading'
 

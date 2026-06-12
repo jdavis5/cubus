@@ -1,14 +1,14 @@
-import styles from './style.module.scss'
+import styles from './form-interaction-row.module.scss'
 import clsx from 'clsx'
 
-type InteractionRowProps = React.PropsWithChildren<{
+type FormInteractionRowProps = React.PropsWithChildren<{
     align?: 'left' | 'right'
 }>
 
-export const InteractionRow = ({
+export const FormInteractionRow = ({
     align = 'left',
     children
-}: InteractionRowProps) => {
+}: FormInteractionRowProps) => {
     return (
         <div
             className={clsx(

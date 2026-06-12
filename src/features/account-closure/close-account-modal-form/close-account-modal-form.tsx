@@ -9,8 +9,8 @@ import { FormStatus } from 'src/common/components/form-status'
 import { Heading } from 'src/common/components/heading'
 import { InputField } from 'src/common/components/input-field'
 import { Mutation } from 'src/common/components/mutation'
+import { Notice } from 'src/common/components/notice'
 import { Section } from 'src/common/components/section'
-import { Status } from 'src/common/components/status'
 import { formTextSchema } from 'src/common/schemas'
 import { trpc } from 'src/common/trpc.client'
 
@@ -61,9 +61,9 @@ export const CloseAccountModalForm = ({
         <Mutation {...mutation}>
             <Section>
                 <Heading as="h2">Confirm account closure</Heading>
-                <Status variant="info">
+                <Notice variant="info">
                     This will permanently delete your account
-                </Status>
+                </Notice>
                 <FormProvider {...form}>
                     <Form onSubmit={form.handleSubmit(onSubmitHandler)}>
                         {mutation.data?.status === 'error' && (
@@ -78,7 +78,7 @@ export const CloseAccountModalForm = ({
                                 />
                             </Form.Col>
                         </Form.Row>
-                        <Form.Interaction align="right">
+                        <Form.InteractionRow align="right">
                             <Button
                                 variant="link"
                                 onClick={handleCloseModal}
@@ -89,7 +89,7 @@ export const CloseAccountModalForm = ({
                             <Button type="submit" isActive={mutation.isPending}>
                                 Confirm
                             </Button>
-                        </Form.Interaction>
+                        </Form.InteractionRow>
                     </Form>
                 </FormProvider>
             </Section>

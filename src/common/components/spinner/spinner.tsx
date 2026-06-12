@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './spinner.module.scss'
 import clsx from 'clsx'
 import { FaSpinner } from 'react-icons/fa'
 

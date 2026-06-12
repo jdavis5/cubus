@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './account-home-menu.module.scss'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 import { IconItem } from 'src/common/components/icon-item'

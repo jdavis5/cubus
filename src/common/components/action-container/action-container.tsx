@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './action-container.module.scss'
 import clsx from 'clsx'
 import { Container } from 'src/common/components/container'
 

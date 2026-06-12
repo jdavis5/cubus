@@ -15,5 +15,6 @@ export const MutationOverlay = ({
     if (status === 'pending') {
         return <Overlay variant="page-loading" />
     }
+
     return <MutationSnackbar error={error} status={status} reset={reset} />
 }

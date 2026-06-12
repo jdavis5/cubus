@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './base-layout.module.scss'
 import Head from 'next/head'
 import { BaseContent } from 'src/layouts/base-layout/base-content'
 import { BaseFooter } from 'src/layouts/base-layout/base-footer'

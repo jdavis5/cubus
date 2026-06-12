@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './subheading.module.scss'
 
 type SubheadingProps = React.PropsWithChildren
 

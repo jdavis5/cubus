@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './password-input.module.scss'
 import React from 'react'
 import clsx from 'clsx'
 import { useFormContext, useWatch } from 'react-hook-form'
@@ -81,5 +81,5 @@ export const PasswordInput = React.forwardRef<
     }
 )
 
-// Updates the displayName after using forwardRef.
+// Update the displayName after using forwardRef.
 PasswordInput.displayName = 'PasswordInput'

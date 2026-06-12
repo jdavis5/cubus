@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './error-boundary.module.scss'
 import { useRouter } from 'next/router'
 import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary'
 import { Heading } from 'src/common/components/heading'

@@ -1,6 +1,6 @@
 @use 'src/common/styles/variables/colors';
 
-.status {
+.notice {
     display: inline-flex;
     flex-direction: row;
     align-items: flex-start;
@@ -11,26 +11,26 @@
     gap: 0.5em;
 }
 
-.status__icon {
+.notice__icon {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
 }
 
-.status--error .status__icon {
+.notice--error .notice__icon {
     color: colors.$pink-1;
 }
 
-.status--success .status__icon {
+.notice--success .notice__icon {
     color: colors.$green-5;
 }
 
-.status--warn .status__icon {
+.notice--warn .notice__icon {
     color: colors.$orange-1;
 }
 
-.status__content {
+.notice__content {
     display: flex;
     flex-direction: row;
     align-items: center;

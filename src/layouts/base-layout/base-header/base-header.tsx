@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './base-header.module.scss'
 import React from 'react'
 import { LinkLogo } from 'src/common/components/link-logo'
 import { MenuToggleButton } from 'src/common/components/menu-toggle-button'

@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './link-button.module.scss'
 import React from 'react'
 import Link, { type LinkProps } from 'next/link'
 import clsx from 'clsx'

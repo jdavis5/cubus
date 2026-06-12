@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './overlay.module.scss'
 import React from 'react'
 import clsx from 'clsx'
 import { Portal } from 'src/common/components/portal'

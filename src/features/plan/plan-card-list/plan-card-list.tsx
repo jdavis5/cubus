@@ -1,6 +1,6 @@
-import styles from './style.module.scss'
+import styles from './plan-card-list.module.scss'
 import React from 'react'
-import { type Plan } from 'prisma/main/schemas'
+import { type Plan } from 'prisma/main/models'
 import { PlanCard } from 'src/features/plan/plan-card'
 
 type PlanCardListProps = {

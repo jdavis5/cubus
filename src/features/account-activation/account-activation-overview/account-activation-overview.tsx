@@ -10,8 +10,8 @@ export const AccountActivationOverview = () => {
         <Section>
             <Heading as="h2">Activate your account</Heading>
             <p>
-                To gain full access to Cubus&apos;s features you must first
-                activate your account.
+                To gain full access to Cubus's features you must first activate
+                your account.
             </p>
             <p>
                 Click the button below to receive an activation link by email.

@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './button.module.scss'
 import React from 'react'
 import clsx from 'clsx'
 import { Spinner } from 'src/common/components/spinner'

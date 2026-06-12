@@ -1,5 +1,5 @@
 import prisma from 'prisma/main'
-import { UserSchema } from 'prisma/main/schemas'
+import { UserSchema } from 'prisma/main/models'
 import { z } from 'zod'
 import { ApiEmailNotAvailableError } from 'src/server/common/api-errors'
 import { emailUpdateMailer } from 'src/server/email-update/email-update.mailer'

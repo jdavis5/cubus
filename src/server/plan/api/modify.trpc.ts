@@ -1,5 +1,5 @@
 import prisma from 'prisma/main'
-import { ApiKeySchema, PlanOptionsSchema } from 'prisma/main/schemas'
+import { ApiKeySchema, PlanOptionsSchema } from 'prisma/main/models'
 import { z } from 'zod'
 import { invariant } from 'src/common/invariant'
 import {

@@ -1,6 +1,6 @@
 import prisma from 'prisma/main'
 import { type Prisma } from 'prisma/main/client'
-import { UserSchema } from 'prisma/main/schemas'
+import { UserSchema } from 'prisma/main/models'
 import { z } from 'zod'
 import { appProtectedProcedure, procedureResult } from 'src/server/trpc.app'
 

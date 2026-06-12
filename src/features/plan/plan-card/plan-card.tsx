@@ -1,10 +1,10 @@
-import styles from './style.module.scss'
+import styles from './plan-card.module.scss'
 import React from 'react'
-import { type Plan } from 'prisma/main/schemas'
+import { type Plan } from 'prisma/main/models'
 import { FaCheck } from 'react-icons/fa'
 import { IconItem } from 'src/common/components/icon-item'
 import { LinkButton } from 'src/common/components/link-button'
-import { Status } from 'src/common/components/status'
+import { Notice } from 'src/common/components/notice'
 import { formatPrice } from 'src/common/formatting'
 
 type PlanCardProps = Pick<Plan, 'name' | 'price' | 'option' | 'limit'> & {
@@ -35,9 +35,9 @@ export const PlanCard = ({
                     </div>
                     <div className={styles['plan__select']}>
                         {isCurrent ? (
-                            <Status variant="info">
+                            <Notice variant="info">
                                 This is your current plan
-                            </Status>
+                            </Notice>
                         ) : (
                             <LinkButton
                                 variant="cta"
@@ -57,7 +57,7 @@ export const PlanCard = ({
                 </div>
                 <div className={styles['plan-details']}>
                     <div className={styles['plan-details__heading']}>
-                        What&apos;s included?
+                        What's included?
                     </div>
                     <ul className={styles['details-list']}>
                         <li className={styles['details-list__item']}>

@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './assistance.module.scss'
 import React from 'react'
 import clsx from 'clsx'
 import { Divider } from 'src/common/components/divider'

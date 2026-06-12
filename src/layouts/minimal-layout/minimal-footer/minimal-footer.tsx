@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './minimal-footer.module.scss'
 import Link from 'next/link'
 import { LinkList } from 'src/common/components/link-list'
 

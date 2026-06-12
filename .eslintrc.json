@@ -2,7 +2,8 @@
     "extends": ["next/core-web-vitals", "prettier"],
     "rules": {
         "no-duplicate-imports": "error",
-        "no-unused-vars": ["error", { "args": "none" }]
+        "no-unused-vars": ["error", { "args": "none" }],
+        "react/no-unescaped-entities": "off"
     },
     "overrides": [
         {

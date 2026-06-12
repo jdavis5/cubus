@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './update-email-form.module.scss'
 import React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form'
@@ -8,7 +8,7 @@ import { Form } from 'src/common/components/form'
 import { FormStatus } from 'src/common/components/form-status'
 import { InputField } from 'src/common/components/input-field'
 import { Mutation } from 'src/common/components/mutation'
-import { Status } from 'src/common/components/status'
+import { Notice } from 'src/common/components/notice'
 import { formUserSchema } from 'src/common/schemas'
 import { trpc } from 'src/common/trpc.client'
 
@@ -71,10 +71,10 @@ export const UpdateEmailForm = ({
         <Mutation {...mutation}>
             <div className={styles['update-email']}>
                 {!unconfirmedEmail && (
-                    <Status variant="info">
+                    <Notice variant="info">
                         A confirmation link will be sent to the new email
                         address
-                    </Status>
+                    </Notice>
                 )}
                 <div className={styles['current-data']}>
                     <div>
@@ -83,12 +83,12 @@ export const UpdateEmailForm = ({
                     <div>{currentEmail}</div>
                 </div>
                 {unconfirmedEmail ? (
-                    <Status variant="success">
+                    <Notice variant="success">
                         <span>
                             A confirmation link has been sent to{' '}
                             <b>{unconfirmedEmail}</b>
                         </span>
-                    </Status>
+                    </Notice>
                 ) : (
                     <FormProvider {...form}>
                         <Form onSubmit={form.handleSubmit(onSubmitHandler)}>
@@ -107,14 +107,14 @@ export const UpdateEmailForm = ({
                                 </Form.Col>
                             </Form.Row>
                             <Form.Row>
-                                <Form.Interaction>
+                                <Form.InteractionRow>
                                     <Button
                                         type="submit"
                                         isActive={mutation.isPending}
                                     >
                                         Send confirmation link
                                     </Button>
-                                </Form.Interaction>
+                                </Form.InteractionRow>
                             </Form.Row>
                         </Form>
                     </FormProvider>

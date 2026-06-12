@@ -33,14 +33,18 @@ const EmailUpdateTemplate = ({ link }: EmailUpdateTemplateProps) => {
         <>
             <div>
                 <p>
-                    Please follow the link below in order to confirm changes to
-                    the email associated with your Cubus account.
+                    Please follow the link below to confirm the change to the
+                    email address associated with your Cubus account.
+                    <br />
+                    You will be asked to enter your password before the change
+                    is applied.
                 </p>
                 <p>
                     <a href={link.href}>{link.href}</a>
                 </p>
                 <p>
-                    If you did not request this email, you can simply ignore it.
+                    If you did not make this request, you can safely ignore this
+                    email.
                 </p>
             </div>
             <Signature />

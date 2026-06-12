@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './account-header.module.scss'
 import React from 'react'
 import { useAuthenticatedSession } from 'src/common/authentication/session'
 import { LinkLogo } from 'src/common/components/link-logo'

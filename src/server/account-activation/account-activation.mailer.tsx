@@ -32,12 +32,11 @@ const AccountActivationTemplate = ({
         <>
             <div>
                 <p>
-                    Please follow the link below in order to activate your Cubus
-                    account.
+                    Please follow the link below to activate your Cubus account.
                 </p>
                 <p>
-                    If you did not create a Cubus account with this email
-                    address, you can simply ignore this email.
+                    If you did not make this request, you can safely ignore this
+                    email.
                 </p>
                 <p>
                     <a href={link.href}>{link.href}</a>

@@ -92,11 +92,11 @@ export const ConfirmPasswordResetForm = ({
                         </Form.Col>
                     </Form.Row>
                     <Form.Row>
-                        <Form.Interaction>
+                        <Form.InteractionRow>
                             <Button type="submit" isActive={mutation.isPending}>
                                 Submit
                             </Button>
-                        </Form.Interaction>
+                        </Form.InteractionRow>
                     </Form.Row>
                 </Form>
             </FormProvider>

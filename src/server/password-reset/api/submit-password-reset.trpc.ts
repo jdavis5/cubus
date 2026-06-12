@@ -1,5 +1,5 @@
 import prisma from 'prisma/main'
-import { TokenSchema, UserSchema } from 'prisma/main/schemas'
+import { TokenSchema, UserSchema } from 'prisma/main/models'
 import { z } from 'zod'
 import { ApiTokenExpiredError } from 'src/server/common/api-errors'
 import { generateHash } from 'src/server/common/hashing'

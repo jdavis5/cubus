@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './form-col.module.scss'
 
 type FormColProps = React.PropsWithChildren
 

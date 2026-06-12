@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './input-container.module.scss'
 import React from 'react'
 import clsx from 'clsx'
 

@@ -1,6 +1,6 @@
-import styles from './style.module.scss'
+import styles from './api-key-details.module.scss'
 import React from 'react'
-import { type ApiKey } from 'prisma/main/schemas'
+import { type ApiKey } from 'prisma/main/models'
 import {
     formatGeneratedAtDate,
     formatLastUsedAtDate

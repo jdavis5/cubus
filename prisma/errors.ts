@@ -1,7 +1,7 @@
 import { type Prisma } from 'prisma/main/client'
 
 /**
- * Type predicate function that narrows to `PrismaClientKnownRequestError`.
+ * A type predicate function that narrows an error to `PrismaClientKnownRequestError`.
  *
  * As client instances are unreliable in combination with hot reloading,
  * this function can be used instead.

@@ -46,8 +46,8 @@ export const PasswordResetForm = ({ onSuccess }: PasswordResetFormProps) => {
     return (
         <Mutation {...mutation}>
             <p>
-                Enter the email associated with your Cubus account and
-                we&apos;ll send you a reset link.
+                Enter the email associated with your Cubus account and we'll
+                send you a reset link.
             </p>
             <FormProvider {...form}>
                 <Form onSubmit={form.handleSubmit(onSubmitHandler)}>
@@ -64,11 +64,11 @@ export const PasswordResetForm = ({ onSuccess }: PasswordResetFormProps) => {
                         </Form.Col>
                     </Form.Row>
                     <Form.Row>
-                        <Form.Interaction>
+                        <Form.InteractionRow>
                             <Button type="submit" isActive={mutation.isPending}>
                                 Send reset link
                             </Button>
-                        </Form.Interaction>
+                        </Form.InteractionRow>
                     </Form.Row>
                 </Form>
             </FormProvider>

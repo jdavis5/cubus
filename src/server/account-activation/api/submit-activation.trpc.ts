@@ -1,5 +1,5 @@
 import prisma from 'prisma/main'
-import { TokenSchema } from 'prisma/main/schemas'
+import { TokenSchema } from 'prisma/main/models'
 import { z } from 'zod'
 import { saveSession } from 'src/server/authentication/api/save-session.helper'
 import { ApiTokenExpiredError } from 'src/server/common/api-errors'

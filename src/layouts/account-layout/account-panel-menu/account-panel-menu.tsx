@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './account-panel-menu.module.scss'
 import React from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import {

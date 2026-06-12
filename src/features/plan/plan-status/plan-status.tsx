@@ -1,6 +1,6 @@
-import styles from './style.module.scss'
+import styles from './plan-status.module.scss'
 import Link from 'next/link'
-import { type Plan } from 'prisma/main/schemas'
+import { type Plan } from 'prisma/main/models'
 import { FaCubes } from 'react-icons/fa'
 
 type PlanStatusProps = {

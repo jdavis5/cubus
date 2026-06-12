@@ -1,5 +1,5 @@
 import React from 'react'
-import { type ApiKey, type Plan } from 'prisma/main/schemas'
+import { type ApiKey, type Plan } from 'prisma/main/models'
 import { ActionContainer } from 'src/common/components/action-container'
 import { ExternalLink } from 'src/common/components/external-link'
 import { Heading } from 'src/common/components/heading'

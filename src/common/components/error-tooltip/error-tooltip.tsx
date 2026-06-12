@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './error-tooltip.module.scss'
 import React from 'react'
 
 type ErrorTooltipProps = React.PropsWithChildren

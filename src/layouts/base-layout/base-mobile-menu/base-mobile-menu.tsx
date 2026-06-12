@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './base-mobile-menu.module.scss'
 import React from 'react'
 import Link from 'next/link'
 import { CSSTransition } from 'react-transition-group'

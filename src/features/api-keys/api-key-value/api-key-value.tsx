@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './api-key-value.module.scss'
 
 type ApiKeyValueProps = {
     value: string

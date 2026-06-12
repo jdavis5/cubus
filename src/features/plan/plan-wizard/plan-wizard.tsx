@@ -1,5 +1,5 @@
 import React from 'react'
-import { type ApiKey, type Plan } from 'prisma/main/schemas'
+import { type ApiKey, type Plan } from 'prisma/main/models'
 import { PlanWizardSelect } from './plan-wizard-select'
 import { PlanWizardUpdate } from './plan-wizard-update'
 import { usePageUrl } from 'src/common/hooks/page-url'

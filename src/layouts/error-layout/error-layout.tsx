@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './error-layout.module.scss'
 import React from 'react'
 import Head from 'next/head'
 import { Logo } from 'src/common/components/logo'

@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './action-container-toggle-button.module.scss'
 import clsx from 'clsx'
 
 type ActionContainerToggleButtonProps = {

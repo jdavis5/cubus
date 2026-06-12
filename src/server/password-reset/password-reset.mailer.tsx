@@ -33,15 +33,15 @@ const PasswordResetTemplate = ({ link }: PasswordResetTemplateProps) => {
         <>
             <div>
                 <p>
-                    Please follow the link below in order to reset your Cubus
-                    account password.
+                    Please follow the link below to reset your Cubus account
+                    password.
                 </p>
                 <p>
                     <a href={link.href}>{link.href}</a>
                 </p>
                 <p>
-                    If you did not request a new password, you can simply ignore
-                    this email.
+                    If you did not make this request, you can safely ignore this
+                    email.
                 </p>
             </div>
             <Signature />

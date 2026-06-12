@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './generate-api-key-modal-form.module.scss'
 import React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form'
@@ -10,8 +10,8 @@ import { FormStatus } from 'src/common/components/form-status'
 import { Heading } from 'src/common/components/heading'
 import { InputField } from 'src/common/components/input-field'
 import { Mutation } from 'src/common/components/mutation'
+import { Notice } from 'src/common/components/notice'
 import { Section } from 'src/common/components/section'
-import { Status } from 'src/common/components/status'
 import { usePageUrl } from 'src/common/hooks/page-url'
 import { formApiKeySchema } from 'src/common/schemas'
 import { trpc } from 'src/common/trpc.client'
@@ -61,9 +61,9 @@ export const GenerateApiKeyModalForm = ({
         return (
             <Section>
                 <Heading as="h2">Your new key</Heading>
-                <Status variant="info">
+                <Notice variant="info">
                     You cannot access this value after the window is closed
-                </Status>
+                </Notice>
                 <div className={styles['result']}>
                     <p>
                         <b>{mutation.variables.name}</b>
@@ -72,7 +72,7 @@ export const GenerateApiKeyModalForm = ({
                 </div>
                 <div className={styles['interaction']}>
                     {clipboard && (
-                        <Status variant="success">Copied to clipboard</Status>
+                        <Notice variant="success">Copied to clipboard</Notice>
                     )}
                     <Button
                         icon={<FaRegCopy />}
@@ -106,7 +106,7 @@ export const GenerateApiKeyModalForm = ({
                             </Form.Col>
                         </Form.Row>
                         <Form.Row>
-                            <Form.Interaction align="right">
+                            <Form.InteractionRow align="right">
                                 <Button
                                     variant="link"
                                     onClick={handleCloseModal}
@@ -121,7 +121,7 @@ export const GenerateApiKeyModalForm = ({
                                 >
                                     Confirm
                                 </Button>
-                            </Form.Interaction>
+                            </Form.InteractionRow>
                         </Form.Row>
                     </Form>
                 </FormProvider>

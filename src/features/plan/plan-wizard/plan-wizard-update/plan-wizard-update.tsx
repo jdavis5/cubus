@@ -1,5 +1,5 @@
 import React from 'react'
-import { type ApiKey, type Plan } from 'prisma/main/schemas'
+import { type ApiKey, type Plan } from 'prisma/main/models'
 import { LinkButton } from 'src/common/components/link-button'
 import { Section } from 'src/common/components/section'
 import { PlanComparisonTable } from 'src/features/plan/plan-comparison-table'

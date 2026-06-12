@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './input.module.scss'
 import React from 'react'
 
 type InputProps = React.ComponentPropsWithRef<'input'>
@@ -17,5 +17,5 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     }
 )
 
-// Updates the displayName after using forwardRef.
+// Update the displayName after using forwardRef.
 Input.displayName = 'Input'

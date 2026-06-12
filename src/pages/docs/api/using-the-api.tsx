@@ -44,7 +44,7 @@ const DocsUsingTheApiPage: PageComponent = () => {
                             API using the following format:
                             <br />
                             <Code>
-                                {env.NEXT_PUBLIC_BASE_URL}/api/&lt;version&gt;
+                                {env.NEXT_PUBLIC_BASE_URL}/api/{'<version>'}
                             </Code>
                         </p>
                         <p>
@@ -61,8 +61,7 @@ const DocsUsingTheApiPage: PageComponent = () => {
                             <Link href={{ pathname: '/account' }}>
                                 your account
                             </Link>
-                            .<br />
-                            Failing to provide a valid key when accessing the
+                            . Failing to provide a valid key when accessing the
                             API will result in an{' '}
                             <Link
                                 href={{
@@ -78,7 +77,7 @@ const DocsUsingTheApiPage: PageComponent = () => {
                             The API key should be included as a request header
                             in the following format:
                             <br />
-                            <Code>Authorization: Bearer &lt;key&gt;</Code>
+                            <Code>Authorization: Bearer {'<key>'}</Code>
                         </p>
                     </Section>
                 </Section>

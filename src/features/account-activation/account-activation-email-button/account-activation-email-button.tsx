@@ -1,8 +1,8 @@
-import styles from './style.module.scss'
+import styles from './account-activation-email-button.module.scss'
 import React from 'react'
 import { Button } from 'src/common/components/button'
 import { Mutation } from 'src/common/components/mutation'
-import { Status } from 'src/common/components/status'
+import { Notice } from 'src/common/components/notice'
 import { trpc } from 'src/common/trpc.client'
 
 type AccountActivationEmailButtonProps = {
@@ -31,11 +31,11 @@ export const AccountActivationEmailButton = ({
                     {message}
                 </Button>
                 {mutation.isSuccess && (
-                    <Status variant="success">
+                    <Notice variant="success">
                         <span>
                             An activation link has been sent to <b>{email}</b>
                         </span>
-                    </Status>
+                    </Notice>
                 )}
             </span>
         </Mutation>

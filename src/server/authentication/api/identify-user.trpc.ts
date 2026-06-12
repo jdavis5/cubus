@@ -1,5 +1,5 @@
 import prisma from 'prisma/main'
-import { UserSchema } from 'prisma/main/schemas'
+import { UserSchema } from 'prisma/main/models'
 import { z } from 'zod'
 import { getAuthMethod } from 'src/common/authentication/auth-options'
 import { ApiEmailNotFoundError } from 'src/server/common/api-errors'

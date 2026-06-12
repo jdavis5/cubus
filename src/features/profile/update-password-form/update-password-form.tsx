@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './update-password-form.module.scss'
 import React from 'react'
 import { useRouter } from 'next/router'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -9,7 +9,7 @@ import { Form } from 'src/common/components/form'
 import { FormStatus } from 'src/common/components/form-status'
 import { InputField } from 'src/common/components/input-field'
 import { Mutation } from 'src/common/components/mutation'
-import { Status } from 'src/common/components/status'
+import { Notice } from 'src/common/components/notice'
 import { formTextSchema, formUserSchema } from 'src/common/schemas'
 import { trpc } from 'src/common/trpc.client'
 
@@ -60,9 +60,9 @@ export const UpdatePasswordForm = ({ dict }: UpdatePasswordFormProps) => {
     return (
         <Mutation {...mutation}>
             <div className={styles['update-password']}>
-                <Status variant="info">
+                <Notice variant="info">
                     You will need to log in again after updating your password
-                </Status>
+                </Notice>
                 <FormProvider {...form}>
                     <Form onSubmit={form.handleSubmit(onSubmitHandler)}>
                         {mutation.data?.status === 'error' && (
@@ -89,14 +89,14 @@ export const UpdatePasswordForm = ({ dict }: UpdatePasswordFormProps) => {
                             </Form.Col>
                         </Form.Row>
                         <Form.Row>
-                            <Form.Interaction>
+                            <Form.InteractionRow>
                                 <Button
                                     type="submit"
                                     isActive={mutation.isPending}
                                 >
                                     Update
                                 </Button>
-                            </Form.Interaction>
+                            </Form.InteractionRow>
                         </Form.Row>
                     </Form>
                 </FormProvider>

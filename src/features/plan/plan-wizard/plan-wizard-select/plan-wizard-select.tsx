@@ -1,5 +1,5 @@
 import React from 'react'
-import { type Plan } from 'prisma/main/schemas'
+import { type Plan } from 'prisma/main/models'
 import { PlanCardList } from 'src/features/plan/plan-card-list'
 import { PlanWizardTemplate } from 'src/features/plan/plan-wizard/plan-wizard-template'
 

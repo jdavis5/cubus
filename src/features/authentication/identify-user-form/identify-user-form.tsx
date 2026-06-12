@@ -67,14 +67,14 @@ export const IdentifyUserForm = ({ onSuccess }: IdentifyUserFormProps) => {
                             </Form.Col>
                         </Form.Row>
                         <Form.Row>
-                            <Form.Interaction>
+                            <Form.InteractionRow>
                                 <Button
                                     type="submit"
                                     isActive={mutation.isPending}
                                 >
                                     Continue
                                 </Button>
-                            </Form.Interaction>
+                            </Form.InteractionRow>
                         </Form.Row>
                     </Form>
                 </FormProvider>

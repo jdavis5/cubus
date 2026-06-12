@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './form-status.module.scss'
 import React from 'react'
 import { FaExclamationTriangle } from 'react-icons/fa'
 

@@ -1,5 +1,5 @@
 import prisma from 'prisma/main'
-import { ApiKeySchema } from 'prisma/main/schemas'
+import { ApiKeySchema } from 'prisma/main/models'
 import { z } from 'zod'
 import {
     ApiInternalError,

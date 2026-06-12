@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './external-link.module.scss'
 import React from 'react'
 import Link, { LinkProps } from 'next/link'
 import { FaExternalLinkAlt } from 'react-icons/fa'

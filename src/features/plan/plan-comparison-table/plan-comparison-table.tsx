@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './plan-comparison-table.module.scss'
 import { FaExclamationTriangle } from 'react-icons/fa'
 import { formatPrice } from 'src/common/formatting'
 

@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './account-content.module.scss'
 import React from 'react'
 
 type AccountContentProps = React.PropsWithChildren

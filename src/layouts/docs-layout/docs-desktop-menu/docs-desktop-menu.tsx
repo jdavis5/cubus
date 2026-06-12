@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './docs-desktop-menu.module.scss'
 import React from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'

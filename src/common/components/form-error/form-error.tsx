@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './form-error.module.scss'
 import React from 'react'
 import { useFormContext } from 'react-hook-form'
 import { FaExclamationTriangle } from 'react-icons/fa'

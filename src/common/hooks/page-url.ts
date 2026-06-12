@@ -11,14 +11,23 @@ import { useRouter } from 'next/router'
 export const usePageUrl = () => {
     const router = useRouter()
 
-    const asPath = router.isReady ? router.asPath : ''
-    const pathParts = asPath.split('?', 2)
-    const pathname = pathParts[0] ?? ''
-    const query = pathParts[1] ?? ''
+    const [pathname, setPathname] = React.useState<string>('')
+    const [queryString, setQueryString] = React.useState<string>('')
+
+    React.useEffect(() => {
+        if (!router.isReady) {
+            return
+        }
+
+        const [urlPath = '', urlQuery = ''] = router.asPath.split('?', 2)
+
+        setPathname(urlPath)
+        setQueryString(urlQuery)
+    }, [router.isReady, router.asPath])
 
     const searchParams = React.useMemo(() => {
-        return new URLSearchParams(query)
-    }, [query])
+        return new URLSearchParams(queryString)
+    }, [queryString])
 
     /**
      * Updates the current URL using Next.js router.replace.

@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './toggle-api-key-modal-form.module.scss'
 import React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form'
@@ -87,7 +87,7 @@ export const ToggleApiKeyModalForm = ({
                             </Form.Col>
                         </Form.Row>
                         <Form.Row>
-                            <Form.Interaction align="right">
+                            <Form.InteractionRow align="right">
                                 <Button
                                     variant="link"
                                     onClick={handleCancel}
@@ -102,7 +102,7 @@ export const ToggleApiKeyModalForm = ({
                                 >
                                     Confirm
                                 </Button>
-                            </Form.Interaction>
+                            </Form.InteractionRow>
                         </Form.Row>
                     </Form>
                 </FormProvider>

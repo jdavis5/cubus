@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './snackbar.module.scss'
 import { FaTimes } from 'react-icons/fa'
 import { Portal } from 'src/common/components/portal'
 

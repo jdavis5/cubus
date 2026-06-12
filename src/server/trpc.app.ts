@@ -52,6 +52,7 @@ export const procedureResult = async <T>(
             }
         }
 
+        // TODO: check if this is safe
         if (error instanceof Error) {
             console.error(error.message)
         }

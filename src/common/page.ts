@@ -12,8 +12,8 @@ export type PageComponent<Props = {}, InitialProps = Props> = NextPage<
 }
 
 /**
- * Transforms the the given input into a page title.
+ * Transforms a string into a page title.
  */
 export const pageTitle = (value: string) => {
-    return `${value} - Cubus`
+    return `${value} | Cubus`
 }

@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './logo.module.scss'
 import { LogoSvg } from 'src/common/components/logo-svg'
 
 type CommonLogoProps = {

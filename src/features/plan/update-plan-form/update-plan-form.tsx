@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { type ApiKey, type Plan } from 'prisma/main/schemas'
+import { type ApiKey, type Plan } from 'prisma/main/models'
 import {
     FormProvider,
     type SubmitHandler,
@@ -15,8 +15,8 @@ import { Form } from 'src/common/components/form'
 import { FormError } from 'src/common/components/form-error'
 import { Heading } from 'src/common/components/heading'
 import { Mutation } from 'src/common/components/mutation'
+import { Notice } from 'src/common/components/notice'
 import { Section } from 'src/common/components/section'
-import { Status } from 'src/common/components/status'
 import { Switch } from 'src/common/components/switch'
 import { formApiKeySchema } from 'src/common/schemas'
 import { trpc } from 'src/common/trpc.client'
@@ -104,14 +104,14 @@ export const UpdatePlanForm = ({
             <Section>
                 <Heading as="h2">Review your keys</Heading>
                 {!keys.length ? (
-                    <Status variant="info">
+                    <Notice variant="info">
                         Nothing to review! Submit to continue.
-                    </Status>
+                    </Notice>
                 ) : (
-                    <Status variant="info">
+                    <Notice variant="info">
                         A maximum of {plan.limit} keys can be enabled with this
                         plan.
-                    </Status>
+                    </Notice>
                 )}
                 <FormProvider {...form}>
                     <Form onSubmit={form.handleSubmit(onSubmitHandler)}>
@@ -143,7 +143,7 @@ export const UpdatePlanForm = ({
                             })}
                             <FormError name="keys" mode="onValid" />
                         </>
-                        <Form.Interaction>
+                        <Form.InteractionRow>
                             <Button type="submit" isActive={mutation.isPending}>
                                 Submit
                             </Button>
@@ -158,7 +158,7 @@ export const UpdatePlanForm = ({
                                     Cancel
                                 </Link>
                             )}
-                        </Form.Interaction>
+                        </Form.InteractionRow>
                     </Form>
                 </FormProvider>
             </Section>

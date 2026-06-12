@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './base-navbar.module.scss'
 import React from 'react'
 import Link from 'next/link'
 import { useSession } from 'src/common/authentication/session'

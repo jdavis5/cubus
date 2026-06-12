@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './notice.module.scss'
 import React from 'react'
 import clsx from 'clsx'
 import {
@@ -14,15 +14,15 @@ const iconOptions = {
     warn: <FaExclamationCircle />
 }
 
-type StatusProps = React.PropsWithChildren<{
+type NoticeProps = React.PropsWithChildren<{
     variant: 'info' | 'error' | 'success' | 'warn'
 }>
 
-export const Status = ({ variant, children }: StatusProps) => {
+export const Notice = ({ variant, children }: NoticeProps) => {
     return (
-        <div className={clsx(styles['status'], styles[`status--${variant}`])}>
-            <div className={styles['status__icon']}>{iconOptions[variant]}</div>
-            <div className={styles['status__content']}>{children}</div>
+        <div className={clsx(styles['notice'], styles[`notice--${variant}`])}>
+            <div className={styles['notice__icon']}>{iconOptions[variant]}</div>
+            <div className={styles['notice__content']}>{children}</div>
         </div>
     )
 }

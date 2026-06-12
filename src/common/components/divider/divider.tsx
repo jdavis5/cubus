@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './divider.module.scss'
 import React from 'react'
 
 type DividerProps = {

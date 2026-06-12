@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './base-content.module.scss'
 import React from 'react'
 import { BaseMobileMenu } from 'src/layouts/base-layout/base-mobile-menu'
 

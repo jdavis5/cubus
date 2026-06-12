@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './progress-steps.module.scss'
 import clsx from 'clsx'
 
 export type ProgressStep = {

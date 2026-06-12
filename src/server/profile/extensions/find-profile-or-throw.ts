@@ -1,4 +1,5 @@
 import prisma from 'prisma/main'
+import { profileSelect } from 'prisma/main/models'
 
 /**
  * Returns profile data for a user and throws if it does not exist.
@@ -8,11 +9,6 @@ export const findProfileOrThrow = async (id: string) => {
         where: {
             id
         },
-        select: {
-            id: true,
-            firstName: true,
-            surname: true,
-            email: true
-        }
+        select: profileSelect
     })
 }

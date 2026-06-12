@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './section.module.scss'
 import React from 'react'
 
 type SectionProps = React.PropsWithChildren

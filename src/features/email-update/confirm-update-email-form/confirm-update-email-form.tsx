@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './confirm-update-email-form.module.scss'
 import React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form'
@@ -92,14 +92,14 @@ export const ConfirmUpdateEmailForm = ({
                             </Form.Col>
                         </Form.Row>
                         <Form.Row>
-                            <Form.Interaction>
+                            <Form.InteractionRow>
                                 <Button
                                     type="submit"
                                     isActive={mutation.isPending}
                                 >
                                     Update
                                 </Button>
-                            </Form.Interaction>
+                            </Form.InteractionRow>
                         </Form.Row>
                     </Form>
                 </FormProvider>

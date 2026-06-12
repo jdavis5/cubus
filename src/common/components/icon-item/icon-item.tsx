@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './icon-item.module.scss'
 import React from 'react'
 import clsx from 'clsx'
 

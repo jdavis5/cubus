@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './docs-layout.module.scss'
 import React from 'react'
 import Head from 'next/head'
 import { DocsContent } from 'src/layouts/docs-layout/docs-content'

@@ -4,8 +4,9 @@
 .code {
     font-family: fonts.$monospace;
     display: inline-flex;
-    background-color: colors.$grey-19;
-    font-size: 0.9em;
+    background-color: colors.$grey-18;
+    color: colors.$black;
+    font-size: 0.8em;
     padding: 0.25em 0.5em;
     border-radius: 0.25em;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { type Profile } from 'prisma/main/models'
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { Button } from 'src/common/components/button'
@@ -9,7 +10,6 @@ import { InputField } from 'src/common/components/input-field'
 import { Mutation } from 'src/common/components/mutation'
 import { formUserSchema } from 'src/common/schemas'
 import { trpc } from 'src/common/trpc.client'
-import { Profile } from 'src/features/profile/profile.type'
 
 const formSchema = z.object({
     firstName: formUserSchema.shape.firstName,
@@ -83,11 +83,11 @@ export const UpdateProfileForm = ({
                         </Form.Col>
                     </Form.Row>
                     <Form.Row>
-                        <Form.Interaction>
+                        <Form.InteractionRow>
                             <Button type="submit" isActive={mutation.isPending}>
                                 Update
                             </Button>
-                        </Form.Interaction>
+                        </Form.InteractionRow>
                     </Form.Row>
                 </Form>
             </FormProvider>

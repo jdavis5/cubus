@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './plan-summary-table.module.scss'
 
 type PlanSummaryTableProps = {
     name: string

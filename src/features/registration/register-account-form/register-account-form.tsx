@@ -129,11 +129,11 @@ export const RegisterAccountForm = ({
                         </Form.Col>
                     </Form.Row>
                     <Form.Row>
-                        <Form.Interaction>
+                        <Form.InteractionRow>
                             <Button type="submit" isActive={mutation.isPending}>
                                 Register
                             </Button>
-                        </Form.Interaction>
+                        </Form.InteractionRow>
                     </Form.Row>
                 </Form>
             </FormProvider>

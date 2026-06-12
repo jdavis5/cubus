@@ -4,7 +4,7 @@ import { Container } from 'src/common/components/container'
 import { Heading } from 'src/common/components/heading'
 import { Section } from 'src/common/components/section'
 import { type PageComponent, pageTitle } from 'src/common/page'
-import { ErrorList } from 'src/features/docs/error-list'
+import { ApiErrorList } from 'src/features/docs/api-error-list'
 import { DocsLayout } from 'src/layouts/docs-layout'
 
 const DocsApiErrorReferencePage: PageComponent = () => {
@@ -25,7 +25,7 @@ const DocsApiErrorReferencePage: PageComponent = () => {
                         The following errors may be encountered when using the
                         Cubus API.
                     </p>
-                    <ErrorList />
+                    <ApiErrorList />
                 </Section>
             </Container>
         </>

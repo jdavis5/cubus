@@ -1,12 +1,12 @@
-import styles from './style.module.scss'
+import styles from './form.module.scss'
 import React from 'react'
 import { FormCol } from './form-col'
-import { FormInteraction } from './form-interaction'
+import { FormInteractionRow } from './form-interaction-row'
 import { FormRow } from './form-row'
 
 type FormProps = React.ComponentPropsWithRef<'form'>
 
-const FormElement = React.forwardRef<HTMLFormElement, FormProps>(
+const FormBase = React.forwardRef<HTMLFormElement, FormProps>(
     ({ children, ...props }, ref) => {
         return (
             <form {...props} className={styles['form']} ref={ref}>
@@ -16,12 +16,15 @@ const FormElement = React.forwardRef<HTMLFormElement, FormProps>(
     }
 )
 
-// Updates the displayName after using forwardRef.
-FormElement.displayName = 'Form'
+// Update the displayName after using forwardRef.
+FormBase.displayName = 'FormBase'
 
 // Create a compound component.
-export const Form = Object.assign({}, FormElement, {
+export const Form = Object.assign(FormBase, {
     Col: FormCol,
-    Interaction: FormInteraction,
+    InteractionRow: FormInteractionRow,
     Row: FormRow
 })
+
+// Update the displayName for the compound component.
+Form.displayName = 'Form'

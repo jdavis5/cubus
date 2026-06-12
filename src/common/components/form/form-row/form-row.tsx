@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './form-row.module.scss'
 
 type FormRowProps = React.PropsWithChildren
 

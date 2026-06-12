@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './link-logo.module.scss'
 import Link, { type LinkProps } from 'next/link'
 import { Logo } from 'src/common/components/logo'
 

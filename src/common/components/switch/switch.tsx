@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './switch.module.scss'
 import React from 'react'
 
 type SwitchProps = React.ComponentPropsWithRef<'input'> & {
@@ -19,5 +19,5 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     }
 )
 
-// Updates the displayName after using forwardRef.
+// Update the displayName after using forwardRef.
 Switch.displayName = 'Switch'

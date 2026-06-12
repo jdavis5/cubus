@@ -1,5 +1,5 @@
 import prisma from 'prisma/main'
-import { UserSchema } from 'prisma/main/schemas'
+import { UserSchema } from 'prisma/main/models'
 import { z } from 'zod'
 import { saveSession } from 'src/server/authentication/api/save-session.helper'
 import {

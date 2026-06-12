@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './sign-in-form.module.scss'
 import React from 'react'
 import { useRouter } from 'next/router'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -81,14 +81,14 @@ export const SignInForm = ({ email, onReset }: SignInFormProps) => {
                             </Form.Col>
                         </Form.Row>
                         <Form.Row>
-                            <Form.Interaction>
+                            <Form.InteractionRow>
                                 <Button
                                     type="submit"
                                     isActive={mutation.isPending}
                                 >
                                     Sign in
                                 </Button>
-                            </Form.Interaction>
+                            </Form.InteractionRow>
                         </Form.Row>
                     </Form>
                 </FormProvider>

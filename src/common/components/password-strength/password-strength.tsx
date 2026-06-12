@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './password-strength.module.scss'
 import React from 'react'
 import zxcvbn from 'zxcvbn'
 

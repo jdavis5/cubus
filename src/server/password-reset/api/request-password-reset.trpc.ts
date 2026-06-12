@@ -1,5 +1,5 @@
 import prisma from 'prisma/main'
-import { UserSchema } from 'prisma/main/schemas'
+import { UserSchema } from 'prisma/main/models'
 import { z } from 'zod'
 import { ApiEmailNotFoundError } from 'src/server/common/api-errors'
 import { passwordResetMailer } from 'src/server/password-reset/password-reset.mailer'

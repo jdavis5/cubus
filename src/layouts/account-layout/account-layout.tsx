@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import styles from './account-layout.module.scss'
 import Head from 'next/head'
 import clsx from 'clsx'
 import { useAuthenticatedSession } from 'src/common/authentication/session'
